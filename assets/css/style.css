@@ -20,38 +20,158 @@
 body {
     background-color: var(--cor02);
 }
+a {
+    text-decoration: none;
+    color: black;
+}
+.footer > a:hover {
+    color: #034AA6;
+}
 
 /*Header*/
 
-.header {
+header {
     background-color: var(--cor04);
 }
 h1 {
     font-family: var(--fonte01);
     font-size: 5vh;
     text-align: center;
-    padding: 5vw;
+    padding: 2vw;
 }
-
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    
+}
+.gastos {
+    margin-left: 30px;
+    margin-right: 30px;
+    border: none;
+    width: 250px;
+    height: 150px;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 25px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0px 2px 3px black;
+}
+p#gastosTotais {
+    font-weight: bolder;
+    padding-top: 20px;
+}
+div.categoria {
+    width: 250px;
+    height: 150px;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 25px;
+    border: none;
+    box-shadow: 0px 2px 3px black;
+    background-color: var(--cor05);
+}
+form {
+    font-size: 12px;
+    text-align: justify;
+    margin-left: 40px;
+}
 /*Main*/
 
 table {
     margin-top: 20px;
-    background-color: var(--cor05);
     margin-left: auto;
     margin-right: auto;
-    border-radius: 5px;
 }
 th {
-    font-size: 22px;
+    font-size: 19px;
+    background-color: var(--cor05);
+    text-align: justify;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-right: 100px;
+    padding-bottom: 5px;
+    border-collapse: collapse;
+    box-shadow: 0px 2px 3px black;
 }
-td, th {
+td {
+    background-color: var(--cor05);
     text-align: justify;
     font-size: 18px;
     padding-right: 100px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 3px black;
 }
 th#descricao{
     padding-right: 200px;
 }
+.categoria>button {
+    background-color: rgba(255, 255, 255, 0);
+    width: 30px;
+    height: 30px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+#Despesas {
+    scale: 300%;
+}
+.addDespesa{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+.Despesas {
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+}
+button {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+button:hover {
+    cursor: pointer;
+    text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.37);
+    text-decoration: none;
+}
+#Despesas:active {
+    animation: animButton 1s;
+}
+@keyframes animButton {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(3.142rad);
+    }
+}
+#buttonCategoria:hover {
+    box-shadow: 0px 1px 2px black;
+}
+
 
 /*Footer*/
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px; /*Controle do Footer*/
+    background-color: var(--cor04);
+}
+.footer {
+    font-size: 18px;
+    padding: 2px;
+}
