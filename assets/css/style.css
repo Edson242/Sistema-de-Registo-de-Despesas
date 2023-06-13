@@ -1,0 +1,38 @@
+@charset "UTF-08";
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+/*Importes e Váriaveis*/
+
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+
+:root{
+    --cor01: #034AA6;
+    --cor02: #035AA6;
+    --cor03: #0455BF;
+    --cor04: #B3CFFB;
+    --cor05: #F2F2F2;
+    --fonte01: 'Diphylleia', serif;
+}
+
+body {
+    background-color: var(--cor02);
+}
+
+/*Header*/
+
+.header {
+    background-color: var(--cor04);
+}
+h1 {
+    font-family: var(--fonte01);
+    font-size: 5vh;
+    text-align: center;
+    padding: 5vw;
+}
+
+/*Main*/
+
+/*Footer*/
