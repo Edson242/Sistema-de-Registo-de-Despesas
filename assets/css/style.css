@@ -35,4 +35,23 @@ h1 {
 
 /*Main*/
 
+table {
+    margin-top: 20px;
+    background-color: var(--cor05);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+th {
+    font-size: 22px;
+}
+td, th {
+    text-align: justify;
+    font-size: 18px;
+    padding-right: 100px;
+}
+th#descricao{
+    padding-right: 200px;
+}
+
 /*Footer*/
