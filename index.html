@@ -6,12 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/imgs/favicon.ico" type="image/x-icon">
     <title>Sistema de Registo de Despesas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
-        <div class="header">
-            <h1>Sistema de Registro de Despesa</h1>
+        <h1>Sistema de Registro de Despesa</h1>
+        <div class="container">
+            <div class="gastos">
+                <p>Gastos Totais</p>
+                <p id="gastosTotais">R$ 0,00</p>
+            </div>
+            <div class="categoria">
+                <p>Categorias</p>
+                <button id="buttonCategoria" class="material-symbols-outlined">filter_list</button>
+            </div>
         </div>
     </header>
     <main>
@@ -28,10 +37,21 @@
                 <td>12/06/2023</td>
                 <td>Alimentação</td>
             </tr>
+            <tr>
+                <td>Gasolina pro carro</td>
+                <td>R$ 100,00</td>
+                <td>15/06/2023</td>
+                <td>Transporte</td>
+            </tr>
         </table>
+        <div class="addDespesa">
+            <button id="Despesas" class="material-symbols-outlined">add_circle</button>
+        </div>
     </main>
     <footer>
-
+        <div class="content">
+            <p class="footer">Site desenvolvido por <a href="https://github.com/Edson242" target="_blank">Edson Silveira</a> & <a href="https://github.com/HeitorSeibert" target="_blank">Heitor Sibert</a> - <a href="https://www.instagram.com/senacsaomigueldooeste/" target="_blank">Senac SMO</a></p>
+        </div>
     </footer>
     
 </body>
