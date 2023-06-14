@@ -6,7 +6,7 @@
 }
 /*Importes e Váriaveis*/
 
-@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Gasoek+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
 :root{
     --cor01: #034AA6;
@@ -14,7 +14,7 @@
     --cor03: #0455BF;
     --cor04: #B3CFFB;
     --cor05: #F2F2F2;
-    --fonte01: 'Gasoek One', sans-serif;
+    --fonte01: 'Black Ops One', cursive;
 }
 
 body {
@@ -81,7 +81,7 @@ form.filter {
     margin-left: 40px;
     word-wrap: break-word;
     overflow-y: scroll;
-    max-height: 78px; 
+    max-height: 76px; 
 
 }
 /*Main*/
