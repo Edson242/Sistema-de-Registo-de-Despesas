@@ -76,12 +76,12 @@ div.categoria {
     background-color: white;
 }
 form.filter {
-    font-size: 12px;
+    font-size: 16git pushpx;
     text-align: justify;
     margin-left: 40px;
     word-wrap: break-word;
     overflow-y: scroll;
-    max-height: 63px; 
+    max-height: 78px; 
 
 }
 /*Main*/
