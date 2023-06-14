@@ -79,6 +79,10 @@ form.filter {
     font-size: 12px;
     text-align: justify;
     margin-left: 40px;
+    word-wrap: break-word;
+    overflow-y: scroll;
+    max-height: 63px; 
+
 }
 /*Main*/
 
