@@ -1,0 +1,34 @@
+<form method="POST" action="processar.php">
+    <input class="popUp" type="checkbox" name="opcoes[]" value="Alimentação" id="opcao1" onclick="cliqueUnico(this)">
+    <label for="Alimentação">Alimentação</label><br>
+
+    <input class="popUp" type="checkbox" name="opcoes[]" value="Transporte" id="opcao2" onclick="cliqueUnico(this)">
+    <label for="Transporte">Transporte</label><br>
+
+    <input class="popUp" type="checkbox" name="opcoes[]" value="Compras" id="opcao3" onclick="cliqueUnico(this)">
+    <label for="Compras">Compras</label><br>
+
+    <input class="popUp" type="checkbox" name="opcoes[]" value="Internet" id="opcao4" onclick="cliqueUnico(this)">
+    <label for="Internet">Internet</label><br>
+
+    <input class="popUp" type="checkbox" name="opcoes[]" value="Carro" id="opcao5" onclick="cliqueUnico(this)">
+    <label for="Carro">Carro</label><br>
+    
+    <input class="popUp" type="checkbox" name="opcoes[]" value="Aluguel" id="opcao6" onclick="cliqueUnico(this)">
+    <label for="Aluguel">Aluguel</label><br>
+  
+    <input type="submit" value="Enviar">
+  </form>
+  <script>
+    function cliqueUnico(checkbox) {
+    var checkboxes = document.getElementsByName(checkbox.name);
+
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] !== checkbox) {
+            checkboxes[i].checked = false;
+        }
+    }
+}
+  </script>
+    
+  
