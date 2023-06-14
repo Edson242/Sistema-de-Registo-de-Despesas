@@ -6,7 +6,7 @@
 }
 /*Importes e Váriaveis*/
 
-@import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Gasoek+One&display=swap');
 
 :root{
     --cor01: #034AA6;
@@ -14,7 +14,7 @@
     --cor03: #0455BF;
     --cor04: #B3CFFB;
     --cor05: #F2F2F2;
-    --fonte01: 'Diphylleia', serif;
+    --fonte01: 'Gasoek One', sans-serif;
 }
 
 body {
@@ -35,6 +35,7 @@ header {
 }
 h1 {
     font-family: var(--fonte01);
+    font-weight: bolder;
     font-size: 5vh;
     text-align: center;
     padding: 2vw;

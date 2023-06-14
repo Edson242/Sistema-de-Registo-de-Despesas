@@ -8,6 +8,9 @@
     <title>Sistema de Registo de Despesas</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Diphylleia&family=Gasoek+One&display=swap" rel="stylesheet">
     <script src="assets/js/index.js"></script>
 </head>
 <body>
@@ -22,17 +25,17 @@
                 <p>Categorias</p>
                 <button id="buttonCategoria" class="material-symbols-outlined">filter_list</button>
                 <form action="" class="filter">
-                    <input type="checkbox" name="" id="alimentacao" onclick="cliqueUnico(this)">
+                    <input type="checkbox" name="" id="alimentacao">
                     <label for="">Alimentação</label><br>
-                    <input type="checkbox" name="" id="transporte" onclick="cliqueUnico(this)">
+                    <input type="checkbox" name="" id="transporte">
                     <label for="">Transporte</label><br>
-                    <input type="checkbox" name="" id="compras" onclick="cliqueUnico(this)">
+                    <input type="checkbox" name="" id="compras">
                     <label for="">Compras</label><br>
-                    <input type="checkbox" name="" id="internet" onclick="cliqueUnico(this)">
+                    <input type="checkbox" name="" id="internet">
                     <label for="">Internet</label><br>
-                    <input type="checkbox" name="" id="carro" onclick="cliqueUnico(this)">
+                    <input type="checkbox" name="" id="carro">
                     <label for="">Carro</label><br>
-                    <input type="checkbox" name="" id="aluguel" onclick="cliqueUnico(this)">
+                    <input type="checkbox" name="" id="aluguel">
                     <label for="">Tecnologia</label><br>
                 </form>
             </div>
@@ -78,23 +81,23 @@
                 <label for="">Data</label><br>
                 <input class="popUp" type="date" name="Data" id="Data"><br>
                 <label for="">Categoria</label><br>
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Alimentação" id="opcao1">
+                <input class="popUp" type="checkbox" name="opcoes[]" value="Alimentação" id="opcao1" onclick="cliqueUnico(this)">
                 <label for="Alimentação">Alimentação</label><br>
 
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Transporte" id="opcao2">
+                <input class="popUp" type="checkbox" name="opcoes[]" value="Transporte" id="opcao2" onclick="cliqueUnico(this)">
                 <label for="Transporte">Transporte</label><br>
 
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Compras" id="opcao3">
+                <input class="popUp" type="checkbox" name="opcoes[]" value="Compras" id="opcao3" onclick="cliqueUnico(this)">
                 <label for="Compras">Compras</label><br>
 
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Internet" id="opcao4">
+                <input class="popUp" type="checkbox" name="opcoes[]" value="Internet" id="opcao4" onclick="cliqueUnico(this)">
                 <label for="Internet">Internet</label><br>
 
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Carro" id="opcao5">
+                <input class="popUp" type="checkbox" name="opcoes[]" value="Carro" id="opcao5" onclick="cliqueUnico(this)">
                 <label for="Carro">Carro</label><br>
                 
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Aluguel" id="opcao6">
-                <label for="Aluguel">Aluguel</label><br>
+                <input class="popUp" type="checkbox" name="opcoes[]" value="Tecnologia" id="opcao6" onclick="cliqueUnico(this)">
+                <label for="Aluguel">Tecnologia</label><br>
                 <button type="submit" class="buttonPopup">Salvar</button>
                 <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
         </div>
