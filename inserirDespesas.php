@@ -21,16 +21,16 @@
     print_r($processamento);
 
 
-    // $query = "INSERT INTO despesas (id_usuario, id_categoria, valor, data, descricao) VALUES (0, 1, $valor, '$data', '$descricao');";
+    $query = "INSERT INTO despesas (id_usuario, id_categoria, valor, data, descricao) VALUES (0, 1, $valor, '$data', '$descricao');";
 
-    // if (mysqli_query($connection, $query)) {
-    //     header("location: index.html");
-    //     echo '<script>alert("✅ Dado inserido com sucesso !")</script>';
-    //     // echo "✅ Dado inserido com sucesso !";
-    // } else {
-    //     // echo "❌ Dado não inserido !: " . mysqli_error($connection);
-    //     header("location: index.html");
-    //     echo '<script>alert("❌ Dado não inserido !")</script>';
-    // }
-    // mysqli_close($connection);
+    if (mysqli_query($connection, $query)) {
+        header("location: index.html");
+        echo '<script>alert("✅ Dado inserido com sucesso !")</script>';
+        // echo "✅ Dado inserido com sucesso !";
+    } else {
+        // echo "❌ Dado não inserido !: " . mysqli_error($connection);
+        header("location: index.html");
+        echo '<script>alert("❌ Dado não inserido !")</script>';
+    }
+    mysqli_close($connection);
 ?>
