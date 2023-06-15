@@ -6,7 +6,7 @@
 }
 /*Importes e Váriaveis*/
 
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 :root{
     --cor01: #034AA6;
@@ -14,7 +14,7 @@
     --cor03: #0455BF;
     --cor04: #B3CFFB;
     --cor05: #F2F2F2;
-    --fonte01: 'Black Ops One', cursive;
+    --fonte01: 'Oswald', sans-serif;
 }
 
 body {
@@ -36,7 +36,7 @@ header {
 h1 {
     font-family: var(--fonte01);
     font-weight: bolder;
-    font-size: 5vh;
+    font-size: 65px;
     text-align: center;
     padding: 2vw;
 }
@@ -52,38 +52,41 @@ h1 {
     margin-left: 30px;
     margin-right: 30px;
     border: none;
-    width: 250px;
-    height: 150px;
+    width: 300px;
+    height: 180px;
     text-align: center;
-    padding-top: 40px;
-    font-size: 25px;
+    padding-top: 25px;
+    font-size: 35px;
     margin-bottom: 20px;
     background-color: white;
     box-shadow: 0px 2px 3px black;
 }
 p#gastosTotais {
+    font-size: 40px;
     font-weight: bolder;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 div.categoria {
-    width: 250px;
-    height: 150px;
+    width: 300px;
+    height: 180px;
     text-align: center;
-    padding-top: 40px;
-    font-size: 25px;
+    padding-top: 25px;
+    font-size: 35px;
     border: none;
     box-shadow: 0px 2px 3px black;
     background-color: white;
 }
 form.filter {
+    padding-top: 8px;
     font-size: 16px;
     text-align: justify;
-    margin-left: 40px;
+    margin-left: 40px; 
+}
+/* Scroll
     word-wrap: break-word;
     overflow-y: scroll;
-    max-height: 76px; 
-
-}
+    max-height: 90px; 
+*/
 /*Main*/
 
 table {
@@ -92,7 +95,7 @@ table {
     margin-right: auto;
 }
 th {
-    font-size: 19px;
+    font-size: 28px;
     background-color: var(--cor05);
     text-align: justify;
     padding-left: 5px;
@@ -105,7 +108,7 @@ th {
 td {
     background-color: var(--cor05);
     text-align: justify;
-    font-size: 18px;
+    font-size: 22px;
     padding-right: 100px;
     padding-left: 5px;
     padding-top: 5px;
