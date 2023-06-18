@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário entrada de despesas</title>
+    <link rel="stylesheet" href="assets/css/styleC.css">
+</head>
+<body>
+    <div>
+        <form action="">
+            <label for="">Descrição</label><br>
+            <input type="text" name="Descrição" id="Descrição" placeholder="Ex. Sanduíche" ><br>
+            <label for="">Valor</label><br>
+            <input type="number" name="" id="" placeholder="20.00"><br>
+            <label for="">Data</label><br>
+            <input type="date" name="" id=""><br>
+            <label for="">Categoria</label><br>
+            <input type="checkbox" name="alimentacao" id="alimentacao" onclick="cliqueUnico(this)">
+            <label for="">Alimentação</label><br>
+            <input type="checkbox" name="transporte" id="transporte" onclick="cliqueUnico(this)">
+            <label for="">Transporte</label><br>
+            <input type="checkbox" name="compras" id="compras" onclick="cliqueUnico(this)">
+            <label for="">Compras</label><br>
+            <input type="checkbox" name="internet" id="internet" onclick="cliqueUnico(this)">
+            <label for="">Internet</label><br>
+            <input type="checkbox" name="carro" id="carro" onclick="cliqueUnico(this)">
+            <label for="">Carro</label><br>
+            <input type="checkbox" name="aluguel" id="aluguel" onclick="cliqueUnico(this)">
+            <label for="">Aluguel</label><br>
+        </form>
+    </div>
+    <script>
+        // Para a seleção da Categoria ser única
+        function cliqueUnico(checkbox) {
+            var checkboxes = document.getElementsByName(checkbox.name);
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i] !== checkbox) {
+                    checkboxes[i].checked = false;
+                }
+            }
+        }
+
+        // Funções para o Popup
+        function abrirPopup() {
+            var popup = document.getElementById("popup");
+            var overlay = document.getElementById("overlay");
+
+            // Exibir o popup e o overlay
+            popup.style.display = "block";
+            overlay.style.display = "block";
+        }
+
+        function fecharPopup() {
+            var popup = document.getElementById("popup");
+            var overlay = document.getElementById("overlay");
+
+            // Ocultar o popup e o overlay
+            popup.style.display = "none";
+            overlay.style.display = "none";
+        }
+    </script>
+</body>
+</html>

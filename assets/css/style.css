@@ -6,7 +6,7 @@
 }
 /*Importes e Váriaveis*/
 
-@import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 :root{
     --cor01: #034AA6;
@@ -14,7 +14,7 @@
     --cor03: #0455BF;
     --cor04: #B3CFFB;
     --cor05: #F2F2F2;
-    --fonte01: 'Diphylleia', serif;
+    --fonte01: 'Oswald', sans-serif;
 }
 
 body {
@@ -35,7 +35,8 @@ header {
 }
 h1 {
     font-family: var(--fonte01);
-    font-size: 5vh;
+    font-weight: bolder;
+    font-size: 65px;
     text-align: center;
     padding: 2vw;
 }
@@ -50,44 +51,70 @@ h1 {
 .gastos {
     margin-left: 30px;
     margin-right: 30px;
-    border: 2px solid black;
-    width: 250px;
-    height: 150px;
+    border: none;
+    width: 300px;
+    height: 180px;
     text-align: center;
-    padding-top: 40px;
-    font-size: 25px;
+    padding-top: 25px;
+    font-size: 35px;
     margin-bottom: 20px;
     background-color: white;
+    box-shadow: 0px 2px 3px black;
 }
 p#gastosTotais {
+    font-size: 40px;
     font-weight: bolder;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 div.categoria {
-    width: 250px;
-    height: 150px;
+    width: 300px;
+    height: 180px;
     text-align: center;
-    padding-top: 40px;
-    font-size: 25px;
-    border: 2px solid black;
-    background-color: var(--cor05);
+    padding-top: 25px;
+    font-size: 35px;
+    border: none;
+    box-shadow: 0px 2px 3px black;
+    background-color: white;
 }
+form.filter {
+    padding-top: 8px;
+    font-size: 16px;
+    text-align: justify;
+    margin-left: 40px; 
+}
+/* Scroll
+    word-wrap: break-word;
+    overflow-y: scroll;
+    max-height: 90px; 
+*/
 /*Main*/
 
 table {
     margin-top: 20px;
-    background-color: var(--cor05);
     margin-left: auto;
     margin-right: auto;
-    border-radius: 5px;
 }
 th {
-    font-size: 22px;
-}
-td, th {
+    font-size: 28px;
+    background-color: var(--cor05);
     text-align: justify;
-    font-size: 18px;
+    padding-left: 5px;
+    padding-top: 5px;
     padding-right: 100px;
+    padding-bottom: 5px;
+    border-collapse: collapse;
+    box-shadow: 0px 2px 3px black;
+}
+td {
+    background-color: var(--cor05);
+    text-align: justify;
+    font-size: 22px;
+    padding-right: 100px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 3px black;
 }
 th#descricao{
     padding-right: 200px;
@@ -105,10 +132,91 @@ th#descricao{
   'GRAD' 0,
   'opsz' 48
 }
+#Despesas {
+    scale: 300%;
+}
+.addDespesa{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 360px;
+    margin-right: 50px;
+}
 .Despesas {
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
+}
+button {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+button:hover {
+    cursor: pointer;
+    text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.37);
+    text-decoration: none;
+}
+#Despesas:active {
+    animation: animButton 1s;
+}
+@keyframes animButton {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(3.142rad);
+    }
+}
+#buttonCategoria:hover {
+    box-shadow: 0px 1px 2px black;
+}
+/* Estilo para o popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 9999;
+}
+h1.popup {
+    font-size: 15px;
+    text-align: center;
+}
+button.buttonPopup {
+    font-size: 18px;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 5px;
+}
+button#cancelar:hover {
+    background-color: rgba(255, 0, 0, 0.959);
+}
+.buttonPopup:hover {
+    background-color: rgba(53, 216, 53, 0.795);
+}
+/* Estilo para o overlay (fundo escuro) */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+.popUp {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+} 
+input.popUp{
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 
@@ -117,7 +225,7 @@ th#descricao{
 .content {
     display: flex;
     justify-content: center;
-    margin-top: 316px; /*Controle do Footer*/
+    margin-top: 6vh; /*Controle do Footer*/
     background-color: var(--cor04);
 }
 .footer {
