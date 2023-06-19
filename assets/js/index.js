@@ -31,37 +31,37 @@ function fecharPopup() {
 // Filtro para tabela
 var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-        checkboxes.forEach(function(checkbox) {
-            checkbox.addEventListener("change", function() {
-                filtrarTabela();
-            });
-        });
+checkboxes.forEach(function(checkbox) {
+    checkbox.addEventListener("change", function() {
+        filtrarTabela();
+    });
+});
 
-        function filtrarTabela() {
-            var tabela = document.getElementById("tabela");
-            var linhas = tabela.getElementsByTagName("tr");
-            
-            var filtroSelecionado = false;
+function filtrarTabela() {
+    var tabela = document.getElementById("tabela");
+    var linhas = tabela.getElementsByTagName("tr");
+    
+    var filtroSelecionado = false;
 
-            for (var i = 1; i < linhas.length; i++) {
-                var colunas = linhas[i].getElementsByTagName("td");
-                var nome = colunas[colunas.length - 1].textContent || colunas[colunas.length - 1].innerText;
+    for (var i = 1; i < linhas.length; i++) {
+        var colunas = linhas[i].getElementsByTagName("td");
+        var nome = colunas[colunas.length - 1].textContent || colunas[colunas.length - 1].innerText;
 
-                
+        
 
-                var filtroCheckbox = document.querySelector('input[name="filtro-nome"][value="' + nome + '"]');
+        var filtroCheckbox = document.querySelector('input[name="filtro-nome"][value="' + nome + '"]');
 
-                if (filtroCheckbox && filtroCheckbox.checked) {
-                    linhas[i].style.display = "";
-                    filtroSelecionado = true;
-                } else {
-                    linhas[i].style.display = "none";
-                }
-            }
-
-            if (!filtroSelecionado) {
-                for (var i = 1; i < linhas.length; i++) {
-                    linhas[i].style.display = "";
-                }
-            }
+        if (filtroCheckbox && filtroCheckbox.checked) {
+            linhas[i].style.display = "";
+            filtroSelecionado = true;
+        } else {
+            linhas[i].style.display = "none";
         }
+    }
+
+    if (!filtroSelecionado) {
+        for (var i = 1; i < linhas.length; i++) {
+            linhas[i].style.display = "";
+        }
+    }
+}

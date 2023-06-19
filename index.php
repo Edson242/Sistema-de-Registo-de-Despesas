@@ -47,7 +47,7 @@
                 <th class="descricao">Descrição</th>
                 <th>Valor</th>
                 <th>Data</th>
-                <th>Categoria</th>
+                <th colspan="2">Categoria</th>
             </tr>
             <tr>
                 <td>Lanche</td>
