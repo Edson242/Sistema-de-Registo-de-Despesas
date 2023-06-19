@@ -229,7 +229,7 @@ input.popUp{
 .content {
     display: flex;
     justify-content: center;
-    margin-top: 37vh; /*Controle do Footer*/
+    margin-top: 50vh; /*Controle do Footer*/
     background-color: var(--cor04);
 }
 .footer {
