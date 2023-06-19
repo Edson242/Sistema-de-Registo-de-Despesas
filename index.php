@@ -1,3 +1,4 @@
+<?php include "calcular.php"?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,7 +19,7 @@
         <div class="container">
             <div class="gastos">
                 <p>Gastos Totais</p>
-                <p id="gastosTotais">  </p>
+                <p id="gastosTotais"><?php echo $dados?></p>
             </div>
             <div class="categoria">
                 <p>Categorias</p>
@@ -48,7 +49,7 @@
                 <th>Data</th>
                 <th>Categoria</th>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td>Lanche</td>
                 <td class="valor">R$ 15,00</td>
                 <td>12/06/2023</td>
@@ -65,7 +66,7 @@
                 <td class="valor">R$ 2.399,00</td>
                 <td>15/06/2023</td>
                 <td>Tecnologia</td>
-            </tr>
+            </tr> -->
         </table>
         <div class="addDespesa">
             <button onclick="abrirPopup()" id="Despesas" class="material-symbols-outlined">add_circle</button>
