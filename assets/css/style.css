@@ -31,7 +31,7 @@ a {
 /*Header*/
 
 header {
-    background-color: var(--cor04);
+    background-color: white;
 }
 h1 {
     font-family: var(--fonte01);
@@ -59,7 +59,7 @@ h1 {
     font-size: 35px;
     margin-bottom: 20px;
     background-color: white;
-    box-shadow: 0px 2px 3px black;
+    box-shadow: 0px 2px 5px black;
 }
 p#gastosTotais {
     font-size: 40px;
@@ -73,7 +73,7 @@ div.categoria {
     padding-top: 25px;
     font-size: 35px;
     border: none;
-    box-shadow: 0px 2px 3px black;
+    box-shadow: 0px 2px 5px black;
     background-color: white;
 }
 form.filter {
@@ -135,11 +135,14 @@ th#descricao{
 #Despesas {
     scale: 300%;
 }
-.addDespesa{
-    display: flex;
+/* display: flex;
     justify-content: flex-end;
-    margin-top: 360px;
-    margin-right: 50px;
+    margin-top: 20px;
+    margin-right: 50px; */
+.addDespesa{
+    position: fixed;
+    top: 90%;
+    left: 95%;
 }
 .Despesas {
     justify-content: center;
@@ -155,7 +158,7 @@ button:hover {
     text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.37);
     text-decoration: none;
 }
-#Despesas:active {
+#Despesas:hover {
     animation: animButton 1s;
 }
 @keyframes animButton {
@@ -163,13 +166,14 @@ button:hover {
         transform: rotate(0deg);
     }
     100% {
-        transform: rotate(3.142rad);
+        transform: rotate(360deg);
     }
 }
 #buttonCategoria:hover {
     box-shadow: 0px 1px 2px black;
-}
-/* Estilo para o popup */
+}  
+  
+/* Popup */
 .popup {
     display: none;
     position: fixed;
@@ -225,7 +229,7 @@ input.popUp{
 .content {
     display: flex;
     justify-content: center;
-    margin-top: 6vh; /*Controle do Footer*/
+    margin-top: 32vh; /*Controle do Footer*/
     background-color: var(--cor04);
 }
 .footer {
