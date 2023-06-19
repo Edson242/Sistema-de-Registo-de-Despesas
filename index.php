@@ -1,3 +1,4 @@
+<?php include "calcular.php"?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,8 +11,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
-    <script src="assets/js/index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -19,35 +19,35 @@
         <div class="container">
             <div class="gastos">
                 <p>Gastos Totais</p>
-                <p id="gastosTotais">R$ 0,00</p>
+                <p id="gastosTotais"><?php echo $dados?></p>
             </div>
             <div class="categoria">
                 <p>Categorias</p>
-                <button id="buttonCategoria" class="material-symbols-outlined">filter_list</button>
-                <form action="" class="filter">
-                    <input type="checkbox" name="" id="alimentacao">
+                <!--<button id="buttonCategoria" class="material-symbols-outlined">filter_list</button>-->
+                <form class="filter" id="filtro-form">
+                    <input type="checkbox" name="filtro-nome" value="Alimentação">
                     <label for="">Alimentação</label><br>
-                    <input type="checkbox" name="" id="transporte">
+                    <input type="checkbox" name="filtro-nome" value="Transporte">
                     <label for="">Transporte</label><br>
-                    <input type="checkbox" name="" id="compras">
+                    <input type="checkbox" name="filtro-nome" value="Compras">
                     <label for="">Compras</label><br>
-                    <input type="checkbox" name="" id="internet">
+                    <input type="checkbox" name="filtro-nome" value="Internet">
                     <label for="">Internet</label><br>
-                    <input type="checkbox" name="" id="carro">
+                    <input type="checkbox" name="filtro-nome" value="Carro">
                     <label for="">Carro</label><br>
-                    <input type="checkbox" name="" id="aluguel">
+                    <input type="checkbox" name="filtro-nome" value="Tecnologia">
                     <label for="">Tecnologia</label><br>
                 </form>
             </div>
         </div>
     </header>
     <main>
-        <table>
+        <table id="tabela">
             <tr>
                 <th class="descricao">Descrição</th>
                 <th>Valor</th>
                 <th>Data</th>
-                <th>Categoria</th>
+                <th colspan="2">Categoria</th>
             </tr>
             <tr>
                 <td>Lanche</td>
@@ -65,7 +65,7 @@
                 <td>Placa de Vídeo pro PC</td>
                 <td class="valor">R$ 2.399,00</td>
                 <td>15/06/2023</td>
-                <td>Compras</td>
+                <td>Tecnologia</td>
             </tr>
         </table>
         <div class="addDespesa">
@@ -87,8 +87,8 @@
                 <input class="popUp" type="checkbox" name="opcoes[]" value="Transporte" id="opcao2" onclick="cliqueUnico(this)">
                 <label for="Transporte">Transporte</label><br>
 
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Compras" id="opcao3" onclick="cliqueUnico(this)">
-                <label for="Compras">Compras</label><br>
+                <input class="popUp" type="checkbox" name="opcoes[]" value="Compras Online" id="opcao3" onclick="cliqueUnico(this)">
+                <label for="Compras">Compras Online</label><br>
 
                 <input class="popUp" type="checkbox" name="opcoes[]" value="Internet" id="opcao4" onclick="cliqueUnico(this)">
                 <label for="Internet">Internet</label><br>
@@ -97,7 +97,7 @@
                 <label for="Carro">Carro</label><br>
                 
                 <input class="popUp" type="checkbox" name="opcoes[]" value="Tecnologia" id="opcao6" onclick="cliqueUnico(this)">
-                <label for="Aluguel">Tecnologia</label><br>
+                <label for="Tecnologia">Tecnologia</label><br>
                 <button type="submit" class="buttonPopup">Salvar</button>
                 <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
         </div>
@@ -108,5 +108,6 @@
             <p class="footer">Site desenvolvido por <a href="https://github.com/Edson242" target="_blank">Edson Silveira</a> & <a href="https://github.com/HeitorSeibert" target="_blank">Heitor Sibert</a> - <a href="https://www.instagram.com/senacsaomigueldooeste/" target="_blank">Senac SMO</a></p>
         </div>
     </footer>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
