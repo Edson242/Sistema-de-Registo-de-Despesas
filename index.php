@@ -72,7 +72,7 @@
             <button onclick="abrirPopup()" id="Despesas" class="material-symbols-outlined">add_circle</button>
         </div>
         <div id="popup" class="popup">
-            <form action="inserirDespesas.php" method="get" class="popUp">
+            <form action="inserirDespesas.php" method="POST" class="popUp">
                 <h1>Item</h1>
                 <label for="">Descrição</label><br>
                 <input class="popUp" type="text" name="Descrição" id="Descrição" placeholder="Ex. Sanduíche" ><br>
