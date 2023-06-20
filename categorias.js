@@ -7,22 +7,30 @@ function criarCategorias(){
     }
     fetch("categorias.php", {
         method: 'POST',
-        body: data
-    }).then(
-        function(response){
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(response => {
             if(response.status) {
-                form[0].reset()
+                // form[0].reset()
                 console.log("Dados Enviados")
+                return JSON.stringify(response)
             } else {
                 console.log("Erros ao enviar os dados.")
             }
         }
-    ).catch(
-        function(error) {
-            console.log("Ocorreu um erro!")
+    ).then(
+        Dados => {
+            console.log(Dados)
+        }
+    ).catch(error => {
+            console.log("Ocorreu um erro!" + error)
         }
     )
 }
+
+// Funções Extras
 
 function abrirPopup() {
     var popup = document.getElementById("popup");
