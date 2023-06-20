@@ -5,24 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorias</title>
     <link rel="stylesheet" href="assets/css/styleC.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/categorias.js"></script>
 </head>
 <body>
-    <div class="princ">
-        <h1>Categorias</h1>
-        <form>
-            <input type="checkbox" name="" id="alimentacao">
-            <label for="">Alimentação</label><br>
-            <input type="checkbox" name="" id="transporte">
-            <label for="">Transporte</label><br>
-            <input type="checkbox" name="" id="compras">
-            <label for="">Compras</label><br>
-            <input type="checkbox" name="" id="internet">
-            <label for="">Internet</label><br>
-            <input type="checkbox" name="" id="carro">
-            <label for="">Carro</label><br>
-            <input type="checkbox" name="" id="aluguel">
-            <label for="">Aluguel</label><br>
-        </form>
+    <div class="addDespesa">
+        <button onclick="abrirPopup()" id="Despesas" class="material-symbols-outlined" style="font-size: 40px;">+</button>
     </div>
+    <div id="popup" class="popup">
+        <form action="" method="" class="popUp" id="formCategoria">
+            <h1 style="font-size: 50px;">Categoria</h1>
+            <label for="">Nome da Categoria</label><br>
+            <input class="popUp" type="text" name="Descrição" id="nome_categoria" placeholder="Ex. Alimentação" >
+            <button type="button" onclick="criarCategorias()" style="border: 2px solid  black; width: 40px; height: 25px;">Add</button><br>
+            <button style="border: 2px solid  black; width: 40px; height: 25px;" type="button">Del</button><br>
+            <button type="submit" class="buttonPopup">Salvar</button>
+            <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
+    </div>
+    <div id="overlay" class="overlay"></div>
 </body>
 </html>
