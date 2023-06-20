@@ -2,12 +2,12 @@
     include "assets/db/db.php";
 
     // Recebe os valores do Popup
-    $descricao = $_GET["Descrição"];
-    $valor = $_GET["Valor"];
-    $data = $_GET["Data"];
+    $descricao = $_POST["Descrição"];
+    $valor = $_POST["Valor"];
+    $data = $_POST["Data"];
     $categoria = "";
-    if(isset($_GET['opcoes'])) {
-        $opcoesSelecionadas = $_GET['opcoes'];
+    if(isset($_POST['opcoes'])) {
+        $opcoesSelecionadas = $_POST['opcoes'];
       
         // Exibe as opções selecionadas
         foreach($opcoesSelecionadas as $opcao) {
