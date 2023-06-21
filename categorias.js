@@ -2,9 +2,11 @@ function criarCategorias(){
     var name = document.getElementById("nome_categoria").value;
     var form = document.getElementById("formCategoria");
 
+    // Objeto principal que recebe os dados
     var data = {
         nome: name
     }
+    // Função para enviar
     fetch("categorias.php", {
         method: 'POST',
         headers: {
@@ -13,7 +15,7 @@ function criarCategorias(){
         body: JSON.stringify(data)
     }).then(response => {
             if(response.status) {
-                // form[0].reset()
+                form.reset()
                 console.log("Dados Enviados")
                 return JSON.stringify(response)
             } else {
@@ -24,6 +26,7 @@ function criarCategorias(){
         Dados => {
             console.log(Dados)
         }
+        // Escopo de erros
     ).catch(error => {
             console.log("Ocorreu um erro!" + error)
         }
