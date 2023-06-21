@@ -6,8 +6,8 @@ body {
   }
   
   .container {
-    width: 400px;
-    margin: 0 auto;
+    width: 450px;
+    margin: auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
@@ -22,7 +22,7 @@ body {
   input[type="text"],
   input[type="email"],
   input[type="password"] {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;

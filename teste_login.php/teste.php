@@ -10,11 +10,11 @@
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    if ($username == "usuario" && $email == "exemplo@example.com" && $password == "senha123") {
-      header("Location: dashboard.php");
+    if ($username == "usuario" && $email == "exemplo@gmail.com" && $password == "senha123") {
+      header("Location: index.php");
       exit();
     } else {
-      $error_message = "Credenciais inválidas. Por favor, tente novamente.";
+      $error_message = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
     }
   }
   ?>
