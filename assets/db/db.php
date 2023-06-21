@@ -3,7 +3,7 @@
 define("HOST",  'localhost');
 define("USER",  'root');
 define("PASSWORD",  '');
-define("NAME_DATABASE",  'sistema_despesa');
+define("NAME_DATABASE",  'sistema_despesas');
 
 // Configurações de conexão com o Banco de Dados MySQL
 $connection = mysqli_connect(HOST, USER, PASSWORD, NAME_DATABASE);
