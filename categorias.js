@@ -2,11 +2,11 @@ function criarCategorias(){
     var name = document.getElementById("nome_categoria").value;
     var form = document.getElementById("formCategoria");
 
-    // Objeto principal que recebe os dados
+    
     var data = {
         nome: name
     }
-    // Função para enviar
+
     fetch("categorias.php", {
         method: 'POST',
         headers: {
@@ -22,11 +22,6 @@ function criarCategorias(){
                 console.log("Erros ao enviar os dados.")
             }
         }
-    ).then(
-        Dados => {
-            console.log(Dados)
-        }
-        // Escopo de erros
     ).catch(error => {
             console.log("Ocorreu um erro!" + error)
         }
