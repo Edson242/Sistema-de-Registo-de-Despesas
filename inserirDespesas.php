@@ -33,7 +33,7 @@
         echo '<script>window.location.href = document.referrer;</script>';
         // echo "✅ Dado inserido com sucesso !";
     } else {
-        // echo "❌ Dado não inserido !: " . mysqli_error($connection);
+         //echo "❌ Dado não inserido !: " . mysqli_error($connection);
         // header("location: index.html");
         echo '<script>alert("❌ Dado não inserido !")</script>';
         echo '<script>window.location.href = document.referrer;</script>';

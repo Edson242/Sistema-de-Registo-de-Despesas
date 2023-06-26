@@ -1,5 +1,5 @@
 <?php
-include "assets/db/db.php";
+include "./db/db.php";
 // Executa a consulta para recuperar o dado desejado
 $sql = "SELECT seu_campo FROM sua_tabela";
 $result = $connection->query($sql);

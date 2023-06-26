@@ -67,6 +67,7 @@
                 <td>15/06/2023</td>
                 <td>Tecnologia</td>
             </tr>
+            
         </table>
         <div class="addDespesa">
             <button onclick="abrirPopup()" id="Despesas" class="material-symbols-outlined">add_circle</button>
@@ -100,6 +101,8 @@
                 <label for="Tecnologia">Tecnologia</label><br>
                 <button type="submit" class="buttonPopup">Salvar</button>
                 <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
+
+                
         </div>
         <div id="overlay" class="overlay"></div>
     </main>
