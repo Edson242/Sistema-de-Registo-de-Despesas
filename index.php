@@ -43,30 +43,21 @@
     </header>
     <main>
         <table id="tabela">
+        
             <tr>
-                <th class="descricao">Descrição</th>
-                <th>Valor</th>
-                <th>Data</th>
-                <th colspan="2">Categoria</th>
-            </tr>
-            <tr>
-                <td>Lanche</td>
-                <td class="valor">R$ 15,00</td>
-                <td>12/06/2023</td>
-                <td>Alimentação</td>
-            </tr>
-            <tr>
-                <td>Gasolina pro carro</td>
-                <td class="valor">R$ 100,00</td>
-                <td>15/06/2023</td>
-                <td>Transporte</td>
-            </tr>
-            <tr>
-                <td>Placa de Vídeo pro PC</td>
-                <td class="valor">R$ 2.399,00</td>
-                <td>15/06/2023</td>
-                <td>Tecnologia</td>
-            </tr>
+    <th class="descricao">Descrição</th>
+    <th>Valor</th>
+    <th>Data</th>
+    <th>Categoria</th>
+    <th>Ações</th> <!-- Nova coluna -->
+</tr>
+<tr>
+    <td>Lanche</td>
+    <td class="valor">R$ 15,00</td>
+    <td>12/06/2023</td>
+    <td>Alimentação</td>
+    <td><button onclick="excluirRegistro(this)" class="material-symbols-outlined">delete</button></td> 
+</tr>
             
         </table>
         <div class="addDespesa">
@@ -111,6 +102,13 @@
             <p class="footer">Site desenvolvido por <a href="https://github.com/Edson242" target="_blank">Edson Silveira</a> & <a href="https://github.com/HeitorSeibert" target="_blank">Heitor Sibert</a> - <a href="https://www.instagram.com/senacsaomigueldooeste/" target="_blank">Senac SMO</a></p>
         </div>
     </footer>
+<script>
+function excluirRegistro(button) {
+    const row = button.parentNode.parentNode; // Obtém a linha do registro
+    row.remove(); // Remove a linha da tabela
+}
+</script>
+
     <script src="assets/js/index.js"></script>
 </body>
 </html>
