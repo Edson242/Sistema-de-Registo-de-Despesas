@@ -24,9 +24,9 @@
             <div class="categoria">
                 <p>Categorias</p>
                 <button id="buttonCategoria" class="material-symbols-outlined" onclick="abrirPopup1()">filter_list</button>
-                <div class="addDespesa">
+
                 </div>
-                <div id="popup" class="popup">
+                <div id="popup1" class="popup">
                     <form action="" method="" class="popUp" id="formCategoria">
                         <h1 style="font-size: 50px;">Categoria</h1>
                         <label for="">Nome da Categoria</label><br>
@@ -34,9 +34,9 @@
                         <button type="button" onclick="criarCategorias()" style="border: 2px solid  black; width: 40px; height: 25px;">Add</button><br>
                         <button style="border: 2px solid  black; width: 40px; height: 25px;" type="button">Del</button><br>
                         <button type="submit" class="buttonPopup">Salvar</button>
-                        <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
+                        <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup1()">Cancelar</button>
                 </div>
-                <div id="overlay" class="overlay"></div>
+                <div id="overlay1" class="overlay"></div>
                 <form class="filter" id="filtro-form">
                     <!-- <input type="checkbox" name="filtro-nome" value="Alimentação">
                     <label for="">Alimentação</label><br>
