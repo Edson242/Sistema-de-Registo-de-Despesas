@@ -26,7 +26,7 @@
     // print_r($categoria);
 
 
-    $query = "INSERT INTO despesas (usuario_id, categoria_id, valor, data, descricao) VALUES ($id, $categoria, $valor, '$data', '$descricao');";
+    $query = "INSERT INTO despesas (usuario_id, categoria_id, valor, data, descricao) VALUES (1, $categoria, $valor, '$data', '$descricao');";
     // print_r($query);
     if (mysqli_query($connection, $query)) {
         // header("location: index.html");

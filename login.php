@@ -1,5 +1,5 @@
 <?php 
-include "../assets/db/db.php";
+include "assets/db/db.php";
 
     $username = $_POST["username"];
     $email = $_POST["email"];
@@ -20,10 +20,7 @@ include "../assets/db/db.php";
             header("location: index.php");
             exit();
         } else {
-            header("location: login.html");
-            $error_message = "Credenciais inválidas. Por favor, tente novamente.";
-        }
-        if (isset($error_message)) {
-            $retorno =  $error_message;
+            echo '<script>alert("❌ Usuário ou Senha inválido! Tente novamente!")</script>';
+            echo '<script>window.location.href = document.referrer;</script>';
         }
 ?>
