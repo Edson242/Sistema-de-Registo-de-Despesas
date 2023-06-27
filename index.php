@@ -1,3 +1,21 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifique se o ID do registro foi fornecido
+    if (isset($_POST["id"])) {
+        $id = $_POST["id"];
+
+        // Aqui você deve adicionar a lógica para excluir o registro do banco de dados
+        // Substitua esta linha pelo código de exclusão apropriado
+
+        echo "Registro excluído com sucesso.";
+    } else {
+        echo "ID do registro não fornecido.";
+    }
+} else {
+    echo "Método de requisição inválido.";
+}
+?>
+
 <?php include "calcular.php"?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -44,71 +62,76 @@
     <main>
         <table id="tabela">
         
-            <tr>
-    <th class="descricao">Descrição</th>
-    <th>Valor</th>
-    <th>Data</th>
-    <th>Categoria</th>
-    <th>Ações</th> <!-- Nova coluna -->
-</tr>
-<tr>
+            <tr data-id="1">
+                <th class="descricao">Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Categoria</th>
+                <th>Ações</th</tr>
+<tr data-id="1">
     <td>Lanche</td>
     <td class="valor">R$ 15,00</td>
     <td>12/06/2023</td>
     <td>Alimentação</td>
     <td><button onclick="excluirRegistro(this)" class="material-symbols-outlined">delete</button></td> 
-</tr>
-            
-        </table>
-        <div class="addDespesa">
-            <button onclick="abrirPopup()" id="Despesas" class="material-symbols-outlined">add_circle</button>
-        </div>
-        <div id="popup" class="popup">
-            <form action="inserirDespesas.php" method="POST" class="popUp">
-                <h1>Item</h1>
-                <label for="">Descrição</label><br>
-                <input class="popUp" type="text" name="Descrição" id="Descrição" placeholder="Ex. Sanduíche" ><br>
-                <label for="">Valor</label><br>
-                <input class="popUp" type="number" name="Valor" id="Valor" placeholder="20.00"><br>
-                <label for="">Data</label><br>
-                <input class="popUp" type="date" name="Data" id="Data"><br>
-                <label for="">Categoria</label><br>
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Alimentação" id="opcao1" onclick="cliqueUnico(this)">
-                <label for="Alimentação">Alimentação</label><br>
+</tr></table>
+<div class="addDespesa">
+    <button onclick="abrirPopup()" id="Despesas" class="material-symbols-outlined">add_circle</button>
+</div>
+<div id="popup" class="popup">
+    <form action="inserirDespesas.php" method="POST" class="popUp">
+        <h1>Item</h1>
+        <label for="">Descrição</label><br>
+        <input class="popUp" type="text" name="Descrição" id="Descrição" placeholder="Ex. Sanduíche" ><br>
+        <label for="">Valor</label><br>
+        <input class="popUp" type="number" name="Valor" id="Valor" placeholder="20.00"><br>
+        <label for="">Data</label><br>
+        <input class="popUp" type="date" name="Data" id="Data"><br>
+        <label for="">Categoria</label><br>
+        <input class="popUp" type="checkbox" name="opcoes[]" value="Alimentação" id="opcao1" onclick="cliqueUnico(this)">
+        <label for="Alimentação">Alimentação</label><br><input class="popUp" type="checkbox" name="opcoes[]" value="Transporte" id="opcao2" onclick="cliqueUnico(this)">
+    <label for="Transporte">Transporte</label><br>
 
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Transporte" id="opcao2" onclick="cliqueUnico(this)">
-                <label for="Transporte">Transporte</label><br>
+    <input class="popUp" type="checkbox" name="opcoes[]" value="Compras Online" id="opcao3" onclick="cliqueUnico(this)">
+    <label for="Compras">Compras Online</label><br>
 
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Compras Online" id="opcao3" onclick="cliqueUnico(this)">
-                <label for="Compras">Compras Online</label><br>
+    <input class="popUp" type="checkbox" name="opcoes[]" value="Internet" id="opcao4" onclick="cliqueUnico(this)">
+    <label for="Internet">Internet</label><br>
 
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Internet" id="opcao4" onclick="cliqueUnico(this)">
-                <label for="Internet">Internet</label><br>
-
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Carro" id="opcao5" onclick="cliqueUnico(this)">
-                <label for="Carro">Carro</label><br>
-                
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Tecnologia" id="opcao6" onclick="cliqueUnico(this)">
-                <label for="Tecnologia">Tecnologia</label><br>
-                <button type="submit" class="buttonPopup">Salvar</button>
-                <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
-
-                
-        </div>
-        <div id="overlay" class="overlay"></div>
-    </main>
-    <footer>
-        <div class="content">
-            <p class="footer">Site desenvolvido por <a href="https://github.com/Edson242" target="_blank">Edson Silveira</a> & <a href="https://github.com/HeitorSeibert" target="_blank">Heitor Sibert</a> - <a href="https://www.instagram.com/senacsaomigueldooeste/" target="_blank">Senac SMO</a></p>
-        </div>
+    <input class="popUp" type="checkbox" name="opcoes[]" value="Carro" id="opcao5" onclick="cliqueUnico(this)">
+    <label for="Carro">Carro</label><br>
+    
+    <input class="popUp" type="checkbox" name="opcoes[]" value="Tecnologia" id="opcao6" onclick="cliqueUnico(this)">
+    <label for="Tecnologia">Tecnologia</label><br>
+    <button type="submit" class="buttonPopup">Salvar</button>
+    <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
+</form></div>
+<div id="overlay" class="overlay"></div>
+</main>
+<footer>
+    <div class="content">
+        <p class="footer">Site desenvolvido por <a href="https://github.com/Edson242" target="_blank">Edson Silveira</a> & <a href="https://github.com/HeitorSeibert" target="_blank">Heitor Sibert</a> - <a href="https://www.instagram.com/senacsaomigueldooeste/" target
+    
     </footer>
 <script>
 function excluirRegistro(button) {
     const row = button.parentNode.parentNode; // Obtém a linha do registro
-    row.remove(); // Remove a linha da tabela
-}
-</script>
+    const id = row.getAttribute("data-id"); // Obtém o ID do registro
+    row.remove(); // Remove a linha da tabela// Envia a solicitação de exclusão do registro para o servidor
+const formData = new FormData();
+formData.append("id", id);
 
-    <script src="assets/js/index.js"></script>
+fetch("excluirRegistro.php", {
+    method: "POST",
+    body: formData
+})
+.then(response => response.text())
+.then(data => {
+    console.log(data); // Exibe a resposta do servidor no console (opcional)
+})
+.catch(error => {
+    console.error("Ocorreu um erro:", error);
+});
+<script src="assets/js/index.js"></script>
 </body>
 </html>
