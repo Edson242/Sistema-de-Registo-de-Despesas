@@ -1,21 +1,3 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verifique se o ID do registro foi fornecido
-    if (isset($_POST["id"])) {
-        $id = $_POST["id"];
-
-        // Aqui você deve adicionar a lógica para excluir o registro do banco de dados
-        // Substitua esta linha pelo código de exclusão apropriado
-
-        echo "Registro excluído com sucesso.";
-    } else {
-        echo "ID do registro não fornecido.";
-    }
-} else {
-    echo "Método de requisição inválido.";
-}
-?>
-
 <?php include "calcular.php"?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -41,22 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="categoria">
                 <p>Categorias</p>
-                <button id="buttonCategoria" class="material-symbols-outlined" onclick="abrirPopup1()">filter_list</button>
-                <div class="addDespesa">
-                </div>
-                <div id="popup" class="popup">
-                    <form action="" method="" class="popUp" id="formCategoria">
-                        <h1 style="font-size: 50px;">Categoria</h1>
-                        <label for="">Nome da Categoria</label><br>
-                        <input class="popUp" type="text" name="Descrição" id="nome_categoria" placeholder="Ex. Alimentação" >
-                        <button type="button" onclick="criarCategorias()" style="border: 2px solid  black; width: 40px; height: 25px;">Add</button><br>
-                        <button style="border: 2px solid  black; width: 40px; height: 25px;" type="button">Del</button><br>
-                        <button type="submit" class="buttonPopup">Salvar</button>
-                        <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
-                </div>
-                <div id="overlay" class="overlay"></div>
+                <!--<button id="buttonCategoria" class="material-symbols-outlined">filter_list</button>-->
                 <form class="filter" id="filtro-form">
-                    <!-- <input type="checkbox" name="filtro-nome" value="Alimentação">
+                    <input type="checkbox" name="filtro-nome" value="Alimentação">
                     <label for="">Alimentação</label><br>
                     <input type="checkbox" name="filtro-nome" value="Transporte">
                     <label for="">Transporte</label><br>
@@ -67,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="checkbox" name="filtro-nome" value="Carro">
                     <label for="">Carro</label><br>
                     <input type="checkbox" name="filtro-nome" value="Tecnologia">
-                    <label for="">Tecnologia</label><br> -->
+                    <label for="">Tecnologia</label><br>
                 </form>
             </div>
         </div>
@@ -110,11 +79,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input class="popUp" type="checkbox" name="opcoes[]" value="Transporte" id="opcao2" onclick="cliqueUnico(this)">
                 <label for="Transporte">Transporte</label><br>
 
-    <input class="popUp" type="checkbox" name="opcoes[]" value="Compras Online" id="opcao3" onclick="cliqueUnico(this)">
-    <label for="Compras">Compras Online</label><br>
+                <input class="popUp" type="checkbox" name="opcoes[]" value="Compras Online" id="opcao3" onclick="cliqueUnico(this)">
+                <label for="Compras">Compras Online</label><br>
 
-    <input class="popUp" type="checkbox" name="opcoes[]" value="Internet" id="opcao4" onclick="cliqueUnico(this)">
-    <label for="Internet">Internet</label><br>
+                <input class="popUp" type="checkbox" name="opcoes[]" value="Internet" id="opcao4" onclick="cliqueUnico(this)">
+                <label for="Internet">Internet</label><br>
 
                 <input class="popUp" type="checkbox" name="opcoes[]" value="Carro" id="opcao5" onclick="cliqueUnico(this)">
                 <label for="Carro">Carro</label><br>
@@ -140,17 +109,6 @@ function excluirRegistro(button) {
 }
 </script>
 
-fetch("excluirRegistro.php", {
-    method: "POST",
-    body: formData
-})
-.then(response => response.text())
-.then(data => {
-    console.log(data); // Exibe a resposta do servidor no console (opcional)
-})
-.catch(error => {
-    console.error("Ocorreu um erro:", error);
-});
-<script src="assets/js/index.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 </html>
