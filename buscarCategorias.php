@@ -7,6 +7,6 @@
     while ($categoria = $categorias->fetch_assoc()) {
         $c[] =  $categoria['nome'];
     }
-    echo "<pre>";
-    print_r($c);
+    // echo "<pre>";
+    // print_r($c);
 ?>
