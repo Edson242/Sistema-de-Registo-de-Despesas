@@ -23,21 +23,8 @@
             </div>
             <div class="categoria">
                 <p>Categorias</p>
-                <button id="buttonCategoria" class="material-symbols-outlined" onclick="abrirPopup1()">filter_list</button>
-                <div class="addDespesa">
-                </div>
-                <div id="popup" class="popup">
-                    <form action="" method="" class="popUp" id="formCategoria">
-                        <h1 style="font-size: 50px;">Categoria</h1>
-                        <label for="">Nome da Categoria</label><br>
-                        <input class="popUp" type="text" name="Descrição" id="nome_categoria" placeholder="Ex. Alimentação" >
-                        <button type="button" onclick="criarCategorias()" style="border: 2px solid  black; width: 40px; height: 25px;">Add</button><br>
-                        <button style="border: 2px solid  black; width: 40px; height: 25px;" type="button">Del</button><br>
-                        <button type="submit" class="buttonPopup">Salvar</button>
-                        <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
-                </div>
-                <div id="overlay" class="overlay"></div>
-                <!-- <form class="filter" id="filtro-form">
+                <!--<button id="buttonCategoria" class="material-symbols-outlined">filter_list</button>-->
+                <form class="filter" id="filtro-form">
                     <input type="checkbox" name="filtro-nome" value="Alimentação">
                     <label for="">Alimentação</label><br>
                     <input type="checkbox" name="filtro-nome" value="Transporte">
@@ -50,41 +37,28 @@
                     <label for="">Carro</label><br>
                     <input type="checkbox" name="filtro-nome" value="Tecnologia">
                     <label for="">Tecnologia</label><br>
-                </form> -->
+                </form>
             </div>
         </div>
     </header>
     <main>
         <table id="tabela">
+        
             <tr>
-<<<<<<< HEAD
     <th class="descricao">Descrição</th>
     <th>Valor</th>
     <th>Data</th>
     <th>Categoria</th>
-    <th>Ações</th> 
+    <th>Ações</th> <!-- Nova coluna -->
 </tr>
-
-=======
-                <th class="descricao">Descrição</th>
-                <th>Valor</th>
-                <th>Data</th>
-                <th>Categoria</th>
-                <th>Ações</th> <!-- Nova coluna -->
-            </tr>
->>>>>>> 285f80d1c91e879898554a54e57a0cc551346e02
-<!-- <tr>
+<tr>
     <td>Lanche</td>
     <td class="valor">R$ 15,00</td>
     <td>12/06/2023</td>
     <td>Alimentação</td>
     <td><button onclick="excluirRegistro(this)" class="material-symbols-outlined">delete</button></td> 
-<<<<<<< HEAD
-</tr> -->
+</tr>
             
-=======
-</tr>   -->
->>>>>>> 285f80d1c91e879898554a54e57a0cc551346e02
         </table>
         <div class="addDespesa">
             <button onclick="abrirPopup()" id="Despesas" class="material-symbols-outlined">add_circle</button>
@@ -117,7 +91,9 @@
                 <input class="popUp" type="checkbox" name="opcoes[]" value="Tecnologia" id="opcao6" onclick="cliqueUnico(this)">
                 <label for="Tecnologia">Tecnologia</label><br>
                 <button type="submit" class="buttonPopup">Salvar</button>
-                <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>     
+                <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
+
+                
         </div>
         <div id="overlay" class="overlay"></div>
     </main>
