@@ -1,0 +1,9 @@
+@charset "UTF-08";
+
+form {
+    display: flex;
+    justify-content: center;
+}
+input {
+    color: white;
+}
