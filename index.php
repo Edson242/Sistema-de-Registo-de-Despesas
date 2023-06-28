@@ -37,7 +37,7 @@
                         <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
                 </div>
                 <div id="overlay" class="overlay"></div>
-                <form class="filter" id="filtro-form">
+                <!-- <form class="filter" id="filtro-form">
                     <input type="checkbox" name="filtro-nome" value="Alimentação">
                     <label for="">Alimentação</label><br>
                     <input type="checkbox" name="filtro-nome" value="Transporte">
@@ -50,7 +50,7 @@
                     <label for="">Carro</label><br>
                     <input type="checkbox" name="filtro-nome" value="Tecnologia">
                     <label for="">Tecnologia</label><br>
-                </form>
+                </form> -->
             </div>
         </div>
     </header>
