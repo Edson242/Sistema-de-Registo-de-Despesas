@@ -56,22 +56,20 @@
     </header>
     <main>
         <table id="tabela">
-        
             <tr>
-    <th class="descricao">Descrição</th>
-    <th>Valor</th>
-    <th>Data</th>
-    <th>Categoria</th>
-    <th>Ações</th> <!-- Nova coluna -->
-</tr>
-<tr>
+                <th class="descricao">Descrição</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Categoria</th>
+                <th>Ações</th> <!-- Nova coluna -->
+            </tr>
+<!-- <tr>
     <td>Lanche</td>
     <td class="valor">R$ 15,00</td>
     <td>12/06/2023</td>
     <td>Alimentação</td>
     <td><button onclick="excluirRegistro(this)" class="material-symbols-outlined">delete</button></td> 
-</tr>
-            
+</tr>   -->
         </table>
         <div class="addDespesa">
             <button onclick="abrirPopup()" id="Despesas" class="material-symbols-outlined">add_circle</button>
@@ -104,9 +102,7 @@
                 <input class="popUp" type="checkbox" name="opcoes[]" value="Tecnologia" id="opcao6" onclick="cliqueUnico(this)">
                 <label for="Tecnologia">Tecnologia</label><br>
                 <button type="submit" class="buttonPopup">Salvar</button>
-                <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
-
-                
+                <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>     
         </div>
         <div id="overlay" class="overlay"></div>
     </main>
