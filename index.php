@@ -1,4 +1,10 @@
-<?php include "calcular.php"?>
+
+
+<?php include "calcular.php";
+include "caminho.php"
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -42,15 +48,33 @@
         </div>
     </header>
     <main>
-        <table id="tabela">
-            <tr>
-                <th class="descricao">Descrição</th>
-                <th>Valor</th>
-                <th>Data</th>
-                <th>Categoria</th>
-                <th>Ações</th> <!-- Nova coluna -->
-            </tr>   
-        </table>
+    <table id="tabela">
+    <tr>
+        <th class="descricao">Descrição</th>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>Categoria</th>
+        <th>Ações</th>
+    </tr>
+    <?php
+    $sql = "SELECT * FROM sua_tabela";
+    $result = $conn->query($sql);
+
+    if ($result-> num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row["descricao"] . "</td>";
+            echo "<td>" . $row["valor"] . "</td>";
+            echo "<td>" . $row["data"] . "</td>";
+            echo "<td>" . $row["categoria"] . "</td>";
+            echo "<td><button onclick='excluirRegistro(this)'>Excluir</button></td>";
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='5'>Nenhum registro encontrado.</td></tr>";
+    }
+    ?>
+</table>
         <div class="addDespesa">
             <button onclick="abrirPopup()" id="Despesas" class="material-symbols-outlined">add_circle</button>
         </div>

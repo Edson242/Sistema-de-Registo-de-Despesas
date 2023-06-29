@@ -1,4 +1,5 @@
- // Para a seleção da Categoria ser única
+
+// Para a seleção da Categoria ser única
  function cliqueUnico(checkbox) {
     var checkboxes = document.getElementsByName(checkbox.name);
 
