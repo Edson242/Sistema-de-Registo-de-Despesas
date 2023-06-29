@@ -1,10 +1,7 @@
-
-
 <?php include "calcular.php";
-
+include "caminho.php"
 
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -48,7 +45,7 @@
         </div>
     </header>
     <main>
-    <table id="tabela">
+       <table id="tabela">
     <tr>
         <th class="descricao">Descrição</th>
         <th>Valor</th>
@@ -57,7 +54,7 @@
         <th>Ações</th>
     </tr>
     <?php
-    $sql = "SELECT * FROM sua_tabela";
+    $sql = "SELECT * FROM tabela";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
