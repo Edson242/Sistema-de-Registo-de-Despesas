@@ -1,4 +1,4 @@
-<?php include "calcular.php"?>
+<?php include "calcular.php";?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,8 +23,29 @@
             </div>
             <div class="categoria">
                 <p>Categorias</p>
-                <!--<button id="buttonCategoria" class="material-symbols-outlined">filter_list</button>-->
-                <form class="filter" id="filtro-form">
+                <button id="buttonCategoria" class="material-symbols-outlined" onclick="abrirPopup1()">filter_list</button>
+                <div class="addDespesa">
+                    <!-- <form action="buscarCat.php" method="POST">
+                        <?php /*foreach($c as $categoriA){
+                            echo "<input type='checkbox' id='categoria' name='opcoes[]' onclick='cliqueUnico(this)'>" . "<label>" . $categoriA . "</label>";
+                            echo "<br>";
+                        }*/
+                        ?>
+                        <button type='submit'>Enviar</button>
+                    </form> -->
+                </div>
+                <!-- <div id="popup1" class="popup1">
+                    <form action="" method="" class="popUp1" id="formCategoria">
+                        <h1 style="font-size: 50px;">Categoria</h1>
+                        <label for="">Nome da Categoria</label><br>
+                        <input class="popUp" type="text" name="Descrição" id="nome_categoria" placeholder="Ex. Alimentação" >
+                        <button type="button" onclick="criarCategorias()" style="border: 2px solid  black; width: 40px; height: 25px;">Add</button><br>
+                        <button style="border: 2px solid  black; width: 40px; height: 25px;" type="button">Del</button><br>
+                        <button type="submit" class="buttonPopup">Salvar</button>
+                        <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
+                </div>
+                <div id="overlay1" class="overlay1"></div> -->
+                <!-- 
                     <input type="checkbox" name="filtro-nome" value="Alimentação">
                     <label for="">Alimentação</label><br>
                     <input type="checkbox" name="filtro-nome" value="Transporte">
@@ -37,8 +58,8 @@
                     <label for="">Carro</label><br>
                     <input type="checkbox" name="filtro-nome" value="Tecnologia">
                     <label for="">Tecnologia</label><br>
-                </form>
-            </div>
+                </form> -->
+            <!-- </div> -->
         </div>
     </header>
     <main>

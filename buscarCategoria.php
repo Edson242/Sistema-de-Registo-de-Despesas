@@ -8,8 +8,17 @@
 </head>
 <body>
     <h1>Categorias</h1>
-    <p><?php foreach($c as $categoriA){
-        echo "<form id='formCategoria' method='POST' action='buscarCat.php'><input type='checkbox' id='categoria' name='opcoes[]'>" .$categoriA . "<br><br>";
-    }?> <button type='submit'>Enviar</button></p>
+    <?php //foreach($c as $categoriA){
+        // echo "<form id='formCategoria' method='POST' action='buscarCat.php'><input type='checkbox' id='categoria' name='opcoes[]'>" . "<label onclick='cliqueUnico(this)'>" . $categoriA . "</label>" . "<br>";
+    //}?>
+    <form action="buscarCat.php" method="POST">
+        <?php foreach($c as $categoriA){
+            echo "<input type='checkbox' id='categoria' name='opcoes[]' onclick='cliqueUnico(this)'>" . "<label>" . $categoriA . "</label>";
+            echo "<br>";
+        }
+        ?>
+    <button type='submit'>Enviar</button>
+    </form>
+    <script src="assets/js/index.js"></script>
 </body>
 </html> 
