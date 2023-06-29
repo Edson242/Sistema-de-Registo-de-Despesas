@@ -1,7 +1,7 @@
 
 
 <?php include "calcular.php";
-include "caminho.php"
+
 
 ?>
 
@@ -60,13 +60,13 @@ include "caminho.php"
     $sql = "SELECT * FROM sua_tabela";
     $result = $conn->query($sql);
 
-    if ($result-> num_rows > 0) {
+    if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>" . $row["descricao"] . "</td>";
-            echo "<td>" . $row["valor"] . "</td>";
-            echo "<td>" . $row["data"] . "</td>";
-            echo "<td>" . $row["categoria"] . "</td>";
+            echo "<td>" . $row["Descrição"] . "</td>";
+            echo "<td>" . $row["Valor"] . "</td>";
+            echo "<td>" . $row["Data"] . "</td>";
+            echo "<td>" . $row["Categoria"] . "</td>";
             echo "<td><button onclick='excluirRegistro(this)'>Excluir</button></td>";
             echo "</tr>";
         }

@@ -7,7 +7,7 @@ function buscarCategorias(){
         nome: name
     }
 
-    fetch("categorias.php", {
+    fetch("buscarCategorias.php", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
