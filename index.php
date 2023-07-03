@@ -1,5 +1,11 @@
 <?php include "calcular.php";
-include "caminho.php"
+include "caminho.php";
+
+$id_us = $_GET['id']; // Obtém a variável da URL
+
+// Faça o processamento necessário com a variável
+// echo "A variável exportada é: " . $id_us;
+
 
 ?>
 <!DOCTYPE html>
@@ -60,21 +66,37 @@ include "caminho.php"
         $c[] =  $results;
     }
     echo "<pre>";
-    print_r($c);
-
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["Descrição"] . "</td>";
-            echo "<td>" . $row["Valor"] . "</td>";
-            echo "<td>" . $row["Data"] . "</td>";
-            echo "<td>" . $row["Categoria"] . "</td>";
+    // print_r($c);
+    foreach ($c as $key => $value) {
+        if($value["usuario_id"] == $id_us) {
+            $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+            $id = $value['categoria_id'];
+            $query = "SELECT categorias.nome FROM categorias WHERE categorias.id = $id";
+            $ID = $conn->query($query)->fetch_assoc()   ;
+            // print_r($value);
+            print_r("<tr>");
+            print_r("<td>" . $value["descricao"] . "</td>");
+            print_r("<td>" . numfmt_format_currency($padrao, $value["valor"], "BRL") . "</td>");
+            print_r("<td>" . date('d/m/Y', strtotime($value["data"])) . "</td>");
+            print_r("<td>" . $ID['nome'] . "</td>");
             echo "<td><button onclick='excluirRegistro(this)'>Excluir</button></td>";
             echo "</tr>";
         }
-    } else {
-        echo "<tr><td colspan='5'>Nenhum registro encontrado.</td></tr>";
     }
+
+    // if ($result->num_rows > 0) {
+    //     while ($row = $result->fetch_assoc()) {
+    //         echo "<tr>";
+    //         echo "<td>" . $row["Descrição"] . "</td>";
+    //         echo "<td>" . $row["Valor"] . "</td>";
+    //         echo "<td>" . $row["Data"] . "</td>";
+    //         echo "<td>" . $row["Categoria"] . "</td>";
+    //         echo "<td><button onclick='excluirRegistro(this)'>Excluir</button></td>";
+    //         echo "</tr>";
+    //     }
+    // } else {
+    //     echo "<tr><td colspan='5'>Nenhum registro encontrado.</td></tr>";
+    // }
     ?>
 </table>
         <div class="addDespesa">
