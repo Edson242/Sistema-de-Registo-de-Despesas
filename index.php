@@ -54,8 +54,13 @@ include "caminho.php"
         <th>Ações</th>
     </tr>
     <?php
-    $sql = "SELECT * FROM tabela";
-    $result = $conn->query($sql);
+    $sql = "SELECT * FROM despesas";
+    $result = mysqli_query($conn, $sql);
+    while ($results = $result->fetch_assoc()) {
+        $c[] =  $results;
+    }
+    echo "<pre>";
+    print_r($c);
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
