@@ -6,7 +6,7 @@ a {
 }
 
 body {
-    background-image: url("../imgs/money.jpg");
+    background: linear-gradient(to bottom, white 20%, #007bff 80% );
     background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
