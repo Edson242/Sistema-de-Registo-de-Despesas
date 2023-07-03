@@ -21,7 +21,10 @@ include "assets/db/db.php";
     header("Location: $url"); // Redireciona para o arquivo2.php com a variável na URL
     exit;
     $calcular = "calcular.php?id=" . urlencode($id); // Monta a URL com a variável
-    header("Location: $url"); // Redireciona para o arquivo2.php com a variável na URL
+    header("Location: $calcular"); // Redireciona para o arquivo2.php com a variável na URL
+    exit;
+    $despesas = "inserirDespesas.php?id=" . urlencode($id); // Monta a URL com a variável
+    header("Location: $despesas"); // Redireciona para o arquivo2.php com a variável na URL
     exit;
 
 

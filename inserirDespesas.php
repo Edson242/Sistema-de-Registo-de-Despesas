@@ -1,6 +1,6 @@
 <?php
     include "assets/db/db.php";
-    include "teste_login.php/login.php";
+    $id_us = $_GET['id'];
 
     // Recebe os valores do Popup
     $descricao = $_POST["Descrição"];
@@ -24,20 +24,20 @@
     $categoria = $processamento->fetch_assoc();
     $categoria = $categoria["id"];
     // print_r($categoria);
+    echo $id_us;
 
-
-    $query = "INSERT INTO despesas (usuario_id, categoria_id, valor, data, descricao) VALUES (1, $categoria, $valor, '$data', '$descricao');";
-    // print_r($query);
-    if (mysqli_query($connection, $query)) {
-        // header("location: index.html");
-        echo '<script>alert("✅ Dado inserido com sucesso !")</script>';
-        echo '<script>window.location.href = document.referrer;</script>';
-        // echo "✅ Dado inserido com sucesso !";
-    } else {
-         //echo "❌ Dado não inserido !: " . mysqli_error($connection);
-        // header("location: index.html");
-        echo '<script>alert("❌ Dado não inserido !")</script>';
-        echo '<script>window.location.href = document.referrer;</script>';
-    }
-    mysqli_close($connection);
+    // $query = "INSERT INTO despesas (usuario_id, categoria_id, valor, data, descricao) VALUES ($id_us, $categoria, $valor, '$data', '$descricao');";
+    // // print_r($query);
+    // if (mysqli_query($connection, $query)) {
+    //     // header("location: index.html");
+    //     echo '<script>alert("✅ Dado inserido com sucesso !")</script>';
+    //     echo '<script>window.location.href = document.referrer;</script>';
+    //     // echo "✅ Dado inserido com sucesso !";
+    // } else {
+    //      //echo "❌ Dado não inserido !: " . mysqli_error($connection);
+    //     // header("location: index.html");
+    //     echo '<script>alert("❌ Dado não inserido !")</script>';
+    //     echo '<script>window.location.href = document.referrer;</script>';
+    // }
+    // mysqli_close($connection);
 ?>
