@@ -24,7 +24,7 @@ $id_us = $_GET['id']; // Obtém a variável da URL
 <body>
     <header>
         <h1>Sistema de Registro de Despesas</h1>
-        <h2>Bem vindo <?php print_r($nome_us);?></h2>
+        <!-- <h2>Bem vindo <?php //print_r($nome_us);?></h2> -->
         <div class="container">
             <div class="gastos">
                 <p>Gastos Totais</p>
