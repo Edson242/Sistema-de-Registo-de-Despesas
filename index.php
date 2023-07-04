@@ -2,7 +2,6 @@
 include "caminho.php";
 
 $id_us = $_GET['id']; // Obtém a variável da URL
-
 // Faça o processamento necessário com a variável
 // echo "A variável exportada é: " . $id_us;
 
@@ -25,6 +24,7 @@ $id_us = $_GET['id']; // Obtém a variável da URL
 <body>
     <header>
         <h1>Sistema de Registro de Despesas</h1>
+        <h2>Bem vindo <?php print_r($nome_us);?></h2>
         <div class="container">
             <div class="gastos">
                 <p>Gastos Totais</p>
@@ -139,12 +139,17 @@ $id_us = $_GET['id']; // Obtém a variável da URL
             <p class="footer">Site desenvolvido por <a href="https://github.com/Edson242" target="_blank">Edson Silveira</a> & <a href="https://github.com/HeitorSeibert" target="_blank">Heitor Seibert</a> - <a href="https://www.instagram.com/senacsaomigueldooeste/" target="_blank">Senac SMO</a></p>
         </div>
     </footer>
-<script>
-function excluirRegistro(button) {
-    const row = button.parentNode.parentNode; // Obtém a linha do registro
-    row.remove(); // Remove a linha da tabela
-}
-</script>
+    <script>
+    function excluirRegistro(button) {
+        const row = button.parentNode.parentNode; // Obtém a linha do registro
+        row.remove(); // Remove a linha da tabela
+    }
+    </script>
+    <?php 
+        $idDespesas = '';
+        $excluir = "DELETE FROM despesas WHERE despesas.id = $idDespesas";
+        $excluir = $conn->query($excluir);
+    ?>
 
     <script src="assets/js/index.js"></script>
 </body>
