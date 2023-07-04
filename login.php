@@ -1,5 +1,7 @@
 <?php 
 include "assets/db/db.php";
+include "logout.php";
+
 
     $username = $_POST["username"];
     $email = $_POST["email"];
