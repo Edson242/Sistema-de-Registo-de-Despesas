@@ -3,7 +3,6 @@ include "caminho.php";
 
 $id_us = $_GET['id']; // Obtém a variável da URL
 // Faça o processamento necessário com a variável
-// echo "A variável exportada é: " . $id_us;
 
 
 ?>
@@ -140,15 +139,19 @@ $id_us = $_GET['id']; // Obtém a variável da URL
         </div>
     </footer>
     <script>
-    function excluirRegistro(button) {
-        const row = button.parentNode.parentNode; // Obtém a linha do registro
-        row.remove(); // Remove a linha da tabela
+        function excluirRegistro(button) {
+            const row = button.parentNode.parentNode; // Obtém a linha do registro
+            row.remove(); // Remove a linha da tabela
     }
     </script>
-    <?php 
-        $idDespesas = '';
-        $excluir = "DELETE FROM despesas WHERE despesas.id = $idDespesas";
-        $excluir = $conn->query($excluir);
+    <?php
+
+        function excluirDespesa($idDespesas) {
+            include "assets/db/db.php";
+            $excluir = "DELETE FROM despesas WHERE despesas.id = $idDespesas";
+            $excluir = $connection->query($excluir);
+        }
+        
     ?>
 
     <script src="assets/js/index.js"></script>
