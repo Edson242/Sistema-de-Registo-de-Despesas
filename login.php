@@ -19,18 +19,22 @@ include "logout.php";
     // print_r($id);
     $id = implode(', ', $id);
 
-    $url = "index.php?id=" . urlencode($id); // Monta a URL com a variável
-    header("Location: $url"); // Redireciona para o arquivo2.php com a variável na URL
-    exit;
-    $calcular = "calcular.php?id=" . urlencode($id); // Monta a URL com a variável
-    header("Location: $calcular"); // Redireciona para o arquivo2.php com a variável na URL
-    exit;
-    $despesas = "inserirDespesas.php?id=" . urlencode($id); // Monta a URL com a variável
-    header("Location: $despesas"); // Redireciona para o arquivo2.php com a variável na URL
-    exit;
+    // $url = "index.php?id=" . urlencode($id); 
+    // header("Location: $url"); 
+    // exit;
+    // $calcular = "calcular.php?id=" . urlencode($id); 
+    // header("Location: $calcular"); 
+    // exit;
+    // $despesas = "inserirDespesas.php?id=" . urlencode($id); 
+    // header("Location: $despesas"); 
+    // exit;
 
 
     if ($username == $nomeDB && $email == $emailDB && $password == $senhaDB) {
+            session_start();
+            $_SESSION['logged'] = true;
+            $_SESSION['usuario'] = $username;
+            $_SESSION['id_us'] = $id;
             header("location: index.php");
             exit();
         } else {
