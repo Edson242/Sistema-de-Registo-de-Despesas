@@ -1,9 +1,10 @@
 <?php
-    session_start();
+    // session_start();
 
-    unset($_SESSION['logged']);
-    unset($_SESSION['usuario']);
-
-    header("location:index.php");
+    // unset($_SESSION['logged']);
+    // if($logged == false) {
+    //     header("location:login.html");
+    // }
+    
 
 ?>

@@ -1,6 +1,6 @@
 
 
-// // Função para excluir um produto
+// Função para excluir um produto
 // function excluirProduto(event) {
 //     var botao = event.target; 
 //     var linha = botao.closest('tr'); 
