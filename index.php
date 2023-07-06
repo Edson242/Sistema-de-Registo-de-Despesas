@@ -155,5 +155,6 @@ $id_us = $_GET['id']; // Obtém a variável da URL
     ?>
 
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/btn_excluir.js"></script>
 </body>
 </html>
