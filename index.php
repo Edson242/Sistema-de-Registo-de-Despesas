@@ -3,6 +3,7 @@ include "caminho.php";
 
 // $id_us = $_GET['id']; // Obtém a variável da URL
 // // Faça o processamento necessário com a variável
+
 session_start();
 unset($_SESSION['id_us']);
 unset($_SESSION['usuario']);
