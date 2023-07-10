@@ -1,8 +1,7 @@
 <?php 
     include "assets/db/db.php";
     session_start();
-    unset($_SESSION['id_us']);
-    echo $id_us;
+    $id_us = $_SESSION['id_us'];
     $query = "SELECT SUM(despesas.valor) FROM despesas WHERE usuario_id = $id_us";
     $processamento = mysqli_query($connection, $query);
     $dados = mysqli_fetch_array($processamento, MYSQLI_ASSOC);

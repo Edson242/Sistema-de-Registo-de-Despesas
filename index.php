@@ -1,13 +1,13 @@
-<?php //include "calcular.php";
+<?php include "calcular.php";
 include "caminho.php";
 
 // $id_us = $_GET['id']; // Obtém a variável da URL
 // // Faça o processamento necessário com a variável
 
-session_start();
-unset($_SESSION['id_us']);
-unset($_SESSION['usuario']);
-// echo $id_us;
+
+// unset($_SESSION['id_us']);
+// unset($_SESSION['usuario']);
+// echo $_SESSION['id_us'];
 
 ?>
 <!DOCTYPE html>
@@ -27,11 +27,11 @@ unset($_SESSION['usuario']);
 <body>
     <header>
         <h1>Sistema de Registro de Despesas</h1>
-        <!-- <h2>Bem vindo <?php echo $usuario?></h2> -->
+        <!-- <h2>Bem vindo <?php //echo $usuario?></h2> -->
         <div class="container">
             <div class="gastos">
                 <p>Gastos Totais</p>
-                <p id="gastosTotais"><?php //echo $dados?></p>
+                <p id="gastosTotais"><?php echo $dados?></p>
             </div>
             <div class="categoria">
                 <p>Categorias</p>
@@ -71,7 +71,7 @@ unset($_SESSION['usuario']);
     // echo "<pre>";
     // print_r($c);
     foreach ($c as $key => $value) {
-        if($value["usuario_id"] == $id_us) {
+        if($value["usuario_id"] == $_SESSION['id_us']) {
             $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
             $id = $value['categoria_id'];
             $query = "SELECT categorias.nome FROM categorias WHERE categorias.id = $id";
