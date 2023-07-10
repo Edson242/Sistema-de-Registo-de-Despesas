@@ -35,8 +35,8 @@ include "caminho.php";
             </div>
             <div class="categoria">
                 <p>Categorias</p>
-                <!--<button id="buttonCategoria" class="material-symbols-outlined">filter_list</button>-->
-                <form class="filter" id="filtro-form">
+                <button id="buttonCategoria" class="material-symbols-outlined">filter_list</button>
+                <!-- <form class="filter" id="filtro-form">
                     <input type="checkbox" name="filtro-nome" value="Alimentação">
                     <label for="">Alimentação</label><br>
                     <input type="checkbox" name="filtro-nome" value="Transporte">
@@ -49,7 +49,7 @@ include "caminho.php";
                     <label for="">Carro</label><br>
                     <input type="checkbox" name="filtro-nome" value="Tecnologia">
                     <label for="">Tecnologia</label><br>
-                </form>
+                </form> -->
             </div>
         </div>
     </header>
@@ -102,6 +102,15 @@ include "caminho.php";
     // }
     ?>
 </table>
+        <?php 
+            $procurar_categorias = "SELECT * FROM categorias";
+            $procurar_categorias = $conn->query($procurar_categorias);
+            while ($id_categoria = $procurar_categorias->fetch_assoc()) {
+                $cat[] =  $id_categoria['nome'];
+            }
+            echo "<pre>";
+            print_r($cat);
+        ?>
         <div class="addDespesa">
             <button onclick="abrirPopup()" id="Despesas" class="material-symbols-outlined">add_circle</button>
         </div>
@@ -115,7 +124,7 @@ include "caminho.php";
                 <label for="">Data</label><br>
                 <input class="popUp" type="date" name="Data" id="Data"><br>
                 <label for="">Categoria</label><br>
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Alimentação" id="opcao1" onclick="cliqueUnico(this)">
+                <!-- <input class="popUp" type="checkbox" name="opcoes[]" value="Alimentação" id="opcao1" onclick="cliqueUnico(this)">
                 <label for="Alimentação">Alimentação</label><br>
 
                 <input class="popUp" type="checkbox" name="opcoes[]" value="Transporte" id="opcao2" onclick="cliqueUnico(this)">
@@ -133,7 +142,12 @@ include "caminho.php";
                 <input class="popUp" type="checkbox" name="opcoes[]" value="Tecnologia" id="opcao6" onclick="cliqueUnico(this)">
                 <label for="Tecnologia">Tecnologia</label><br>
                 <button type="submit" class="buttonPopup">Salvar</button>
-                <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>   
+                <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>    -->
+                <?php
+                foreach ($cat as $key => $value) {
+                   "<input class='popUp' type='checkbox' name='opcoes[]' value='Carro' id='opcao5' onclick='cliqueUnico(this)'>" . "</input>";
+                } 
+                ?>
         </div>
         <div id="overlay" class="overlay"></div>
     </main>
