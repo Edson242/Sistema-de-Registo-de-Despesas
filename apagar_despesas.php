@@ -1,5 +1,5 @@
-<!-- <?php
-include 'caminho.php';
+<?php
+include './assets/db/db.php';
 
 $despesas = json_decode(file_get_contents('php://input'), true);
 
@@ -16,4 +16,4 @@ if ($id != '') {
 } else {
     echo json_encode(array('status' => false));
 }
-?> -->
+?>
