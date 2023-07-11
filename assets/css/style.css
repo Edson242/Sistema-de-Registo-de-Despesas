@@ -77,10 +77,13 @@ div.categoria {
     background-color: white;
 }
 form.filter {
-    padding-top: 8px;
+    /* padding-top: 8px; */
     font-size: 16px;
     text-align: justify;
     margin-left: 40px; 
+    word-wrap: break-word;
+    overflow-y: scroll;
+    max-height: 90px; 
 }
 /* Scroll
     word-wrap: break-word;
@@ -142,7 +145,7 @@ th#descricao{
 .addDespesa{
     position: fixed;
     top: 90%;
-    left: 95%;
+    left: 92%;
 }
 .Despesas {
     justify-content: center;
@@ -198,6 +201,9 @@ button.buttonPopup {
     padding: 5px;
 }
 button#cancelar:hover {
+    background-color: rgba(255, 0, 0, 0.959);
+}
+button#cancelar1:hover {
     background-color: rgba(255, 0, 0, 0.959);
 }
 .buttonPopup:hover {

@@ -30,20 +30,20 @@ function criarCategorias(){
 
 // Funções Extras
 
-function abrirPopup() {
-    var popup = document.getElementById("popup");
-    var overlay = document.getElementById("overlay");
+// function abrirPopup() {
+//     var popup = document.getElementById("popup");
+//     var overlay = document.getElementById("overlay");
 
-    // Exibir o popup e o overlay
-    popup.style.display = "block";
-    overlay.style.display = "block";
-}
+//     // Exibir o popup e o overlay
+//     popup.style.display = "block";
+//     overlay.style.display = "block";
+// }
 
-function fecharPopup() {
-    var popup = document.getElementById("popup");
-    var overlay = document.getElementById("overlay");
+// function fecharPopup() {
+//     var popup = document.getElementById("popup");
+//     var overlay = document.getElementById("overlay");
 
-    // Ocultar o popup e o overlay
-    popup.style.display = "none";
-    overlay.style.display = "none";
-}
+//     // Ocultar o popup e o overlay
+//     popup.style.display = "none";
+//     overlay.style.display = "none";
+// }

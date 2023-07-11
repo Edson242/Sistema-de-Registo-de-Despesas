@@ -29,24 +29,6 @@ function fecharPopup() {
     overlay.style.display = "none";
 }
 
-function abrirPopup1() {
-    var popup1 = document.getElementById("popup1");
-    var overlay = document.getElementById("overlay1");
-
-    // Exibir o popup e o overlay
-    popup1.style.display = "block";
-    overlay.style.display = "block";
-}
-
-function fecharPopup1() {
-    var popup1 = document.getElementById("popup1");
-    var overlay = document.getElementById("overlay1");
-
-    // Ocultar o popup e o overlay
-    popup1.style.display = "none";
-    overlay.style.display = "none";
-}
-
 // Filtro para tabela
 var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
