@@ -61,9 +61,9 @@ while ($id_categoria = $procurar_categorias->fetch_assoc()) {
     while ($dados = $result->fetch_assoc()) {
         $dadosUsuario[] =  $dados;
     }
-    // echo "<pre>";
-    // print_r($c);
-    foreach ($dadosUsuario as $key => $valor) {
+    echo "<pre>";
+    print_r($dados);
+    foreach ($dados as $key => $valor) {
         if($valor["usuario_id"] == $_SESSION['id_us']) {
             $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
             $id = $valor['categoria_id'];
@@ -105,7 +105,7 @@ while ($id_categoria = $procurar_categorias->fetch_assoc()) {
             <form action="inserirDespesas.php" method="POST">
                 <h1>Item</h1>
                 <label for="Descrição">Descrição</label><br>
-                <input class="popUp" type="text" name="Descrição" id="Descricao" placeholder="Ex. Sanduíche"><br>
+                <input class="popUp" type="text" name="Descricao" id="Descricao" placeholder="Ex. Sanduíche"><br>
                 <label for="Valor">Valor</label><br>
                 <input class="popUp" type="number" name="Valor" id="Valor" placeholder="20.00"><br>
                 <label for="Data">Data</label><br>
