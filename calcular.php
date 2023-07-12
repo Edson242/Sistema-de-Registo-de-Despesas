@@ -11,6 +11,6 @@
     }
     // print_r($dados);
     $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
-    $dados = numfmt_format_currency($padrao, $dados, "BRL");
+    $gastos = numfmt_format_currency($padrao, $dados, "BRL");
     // echo $dados;
 ?>
