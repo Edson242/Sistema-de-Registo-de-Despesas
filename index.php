@@ -1,24 +1,21 @@
-<?php include "calcular.php";
-include "caminho.php";
+<?php 
+    include "calcular.php";
+    include "caminho.php";
 
-// $id_us = $_GET['id']; // Obtém a variável da URL
-// // Faça o processamento necessário com a variável
-
-// unset($_SESSION['id_us']);
-// unset($_SESSION['usuario']);
-// echo $id_us;
-
-$procurar_categorias = "SELECT * FROM categorias";
-$procurar_categorias = $conn->query($procurar_categorias);
-while ($id_categoria = $procurar_categorias->fetch_assoc()) {
-    $cat[$id_categoria['id']] =  $id_categoria['nome'];
-}
-// echo "<pre>";
-// print_r($cat);
+    $id_usuario = $_SESSION['id_us'];
+    $procurar_categorias = "SELECT * FROM categorias WHERE id_usuario = $id_usuario";
+    $procurar_categorias = $conn->query($procurar_categorias);
+    $controle = False;
+    while ($id_categoria = $procurar_categorias->fetch_assoc()) {
+        $cat[$id_categoria['id']] =  $id_categoria['nome'];
+        $controle = True;
+    }
+    if(($_SESSION['logged'] == False)) {
+        header("location:login.html");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,19 +28,33 @@ while ($id_categoria = $procurar_categorias->fetch_assoc()) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <script src="assets/js/index.js"></script>
-    <!-- <script src="categorias.js"></script> -->
 </head>
-
 <body>
     <header>
+        <h2 id="bemVindo">Bem vindo <?php echo $_SESSION['usuario'];?></h2>
+        <a href="config/logout.php"><button id="logout">Logout</button></a>
         <h1>Sistema de Registro de Despesas</h1>
-        <!-- <h2>Bem vindo <?php //echo $usuario?></h2> -->
         <div class="container">
             <div class="gastos">
                 <p>Gastos Totais</p>
                 <p id="gastosTotais"><?php echo $gastos?></p>
             </div>
             
+            <div class="addCategoria">
+                <label for="" style="font-size: 35px;">Categorias</label><br>
+                <input class="popUp" type="text" name="Descrição" id="nome_categoria" placeholder="Ex. Alimentação">
+                <button type="button" onclick="criarCategorias()" style="border: 2px solid  black; width: 40px; height: 25px;">Add</button>
+                <?php
+                if($controle == False) {
+                    print_r("<br>" . "<label>" . "Sem Categorias!" . "</label>");
+                } else {
+                    foreach ($cat as $key => $value) {
+                        print_r("<br>" . "<label>" . $value . "</label>");
+                        print_r("<button style='border: 2px solid  black; width: 40px; height: 25px;' type='button' id='cancelar1' onclick='excluirCategoria($key)'>Del</button>");
+                    }
+                }
+                ?>
+            </div>
         </div>
     </header>
     <main>
@@ -61,9 +72,9 @@ while ($id_categoria = $procurar_categorias->fetch_assoc()) {
     while ($dados = $result->fetch_assoc()) {
         $dadosUsuario[] =  $dados;
     }
-    echo "<pre>";
-    print_r($dados);
-    foreach ($dados as $key => $valor) {
+    // echo "<pre>";
+    // print_r($dados);
+    foreach ($dadosUsuario as $key => $valor) {
         if($valor["usuario_id"] == $_SESSION['id_us']) {
             $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
             $id = $valor['categoria_id'];
@@ -75,34 +86,20 @@ while ($id_categoria = $procurar_categorias->fetch_assoc()) {
             print_r("<td>" . numfmt_format_currency($padrao, $valor["valor"], "BRL") . "</td>");
             print_r("<td>" . date('d/m/Y', strtotime($valor["data"])) . "</td>");
             print_r("<td>" . $ID['nome'] . "</td>");
-            echo "<td><button onclick='excluirRegistro(this)'>Excluir</button></td>";
+            echo "<td><button onclick='excluirRegistro(" . $valor["id"] . ")'>Excluir</button>";
             echo "</tr>";
         }
     }
-
-            // if ($result->num_rows > 0) {
-            //     while ($row = $result->fetch_assoc()) {
-            //         echo "<tr>";
-            //         echo "<td>" . $row["Descrição"] . "</td>";
-            //         echo "<td>" . $row["Valor"] . "</td>";
-            //         echo "<td>" . $row["Data"] . "</td>";
-            //         echo "<td>" . $row["Categoria"] . "</td>";
-            //         echo "<td><button onclick='excluirRegistro(this)'>Excluir</button></td>";
-            //         echo "</tr>";
-            //     }
-            // } else {
-            //     echo "<tr><td colspan='5'>Nenhum registro encontrado.</td></tr>";
-            // }
             ?>
         </table>
         <div class="addDespesa">
             <button onclick="abrirPopup()" id="Despesas" class="material-symbols-outlined">add_circle</button>
         </div>
         <div>   
-            <a href="relatorio.php" target="_blank"><button>Gerar Relatório</button></a>
+            <a href="relatorio.php" target="_blank"><button id="gerarRelatorio">Gerar<br>Relatório</button></a>
         </div>
         <div id="popup" class="popup">
-            <form action="inserirDespesas.php" method="POST">
+            <form action="config/inserirDespesas.php" method="POST">
                 <h1>Item</h1>
                 <label for="Descrição">Descrição</label><br>
                 <input class="popUp" type="text" name="Descricao" id="Descricao" placeholder="Ex. Sanduíche"><br>
@@ -111,32 +108,15 @@ while ($id_categoria = $procurar_categorias->fetch_assoc()) {
                 <label for="Data">Data</label><br>
                 <input class="popUp" type="date" name="Data" id="Data"><br>
                 <label for="Categoria">Categoria</label><br>
-                <!-- <input class="popUp" type="checkbox" name="opcoes[]" value="Alimentação" id="opcao1" onclick="cliqueUnico(this)">
-                <label for="Alimentação">Alimentação</label><br>
-
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Transporte" id="opcao2" onclick="cliqueUnico(this)">
-                <label for="Transporte">Transporte</label><br>
-
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Compras Online" id="opcao3" onclick="cliqueUnico(this)">
-                <label for="Compras">Compras Online</label><br>
-
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Internet" id="opcao4" onclick="cliqueUnico(this)">
-                <label for="Internet">Internet</label><br>
-
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Carro" id="opcao5" onclick="cliqueUnico(this)">
-                <label for="Carro">Carro</label><br>
-                
-                <input class="popUp" type="checkbox" name="opcoes[]" value="Tecnologia" id="opcao6" onclick="cliqueUnico(this)">
-                <label for="Tecnologia">Tecnologia</label><br> -->
+                <div id="opcCat">
                 <?php
                 foreach ($cat as $key => $value) {
                     echo "<input class='popUp' type='radio' name='opcoes' value='$key'><label>" . $value . "</label><br>";
-            
                 }
                 ?>
+                </div>
                 <button type="submit" class="buttonPopup">Salvar</button>
                 <button type="button" class="buttonPopup" id="cancelar" onclick="fecharPopup()">Cancelar</button>
-
         </div>
         <div id="overlay" class="overlay"></div>
     </main>
@@ -145,47 +125,5 @@ while ($id_categoria = $procurar_categorias->fetch_assoc()) {
             <p class="footer">Site desenvolvido por <a href="https://github.com/Edson242" target="_blank">Edson Silveira</a> & <a href="https://github.com/HeitorSeibert" target="_blank">Heitor Seibert</a> - <a href="https://www.instagram.com/senacsaomigueldooeste/" target="_blank">Senac SMO</a></p>
         </div>
     </footer>
-    
-    <script>
-        function excluirRegistro(button) {
-            const row = button.parentNode.parentNode; // Obtém a linha do registro
-            row.remove(); // Remove a linha da tabela
-        }
-
-        function abrirPopupCategorias() {
-            var popupCategoria = document.getElementById("popup1");
-            var overlayCategoria = document.getElementById("overlay1");
-
-            // Exibir o popup e o overlay
-            popupCategoria.style.display = "block";
-            overlayCategoria.style.display = "block";
-        }
-
-        function fecharPopupCategorias() {
-            var popupCategoria = document.getElementById("popup1");
-            var overlayCategoria = document.getElementById("overlay1");
-
-            // Ocultar o popup e o overlay
-            popupCategoria.style.display = "none";
-            overlayCategoria.style.display = "none";
-        }
-        function abrirPopup() {
-            var popup = document.getElementById("popup");
-            var overlay = document.getElementById("overlay");
-
-            // Exibir o popup e o overlay
-            popup.style.display = "block";
-            overlay.style.display = "block";
-        }
-
-        function fecharPopup() {
-            var popup = document.getElementById("popup");
-            var overlay = document.getElementById("overlay");
-
-            // Ocultar o popup e o overlay
-            popup.style.display = "none";
-            overlay.style.display = "none";
-        }
-    </script>
 </body>
 </html>

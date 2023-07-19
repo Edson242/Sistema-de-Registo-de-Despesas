@@ -1,5 +1,5 @@
 <?php 
-include "assets/db/db.php";
+include "../assets/db/db.php";
 
 $nome = $_POST["username"];
 $email = $_POST["email"];

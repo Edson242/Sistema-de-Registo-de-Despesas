@@ -1,5 +1,5 @@
 <?php
-    include "assets/db/db.php";
+    include "../assets/db/db.php";
     session_start();
     
     $id_us = $_SESSION['id_us'];

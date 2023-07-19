@@ -1,6 +1,5 @@
 <?php 
-include "assets/db/db.php";
-include "logout.php";
+include "..//assets/db/db.php";
 
 
     $username = $_POST["username"];
@@ -35,7 +34,7 @@ include "logout.php";
             $_SESSION['logged'] = true;
             $_SESSION['usuario'] = $username;
             $_SESSION['id_us'] = $id;
-            header("location: index.php");
+            header("location: ../index.php");
             exit();
         } else {
             echo '<script>alert("❌ Usuário ou Senha inválido! Tente novamente!")</script>';

@@ -86,11 +86,12 @@ function criarCategorias(){
         body: JSON.stringify(data)
     }).then(response => {
             if(response.status) {
-                form.reset()
+                location.reload();
                 console.log("Dados Enviados")
                 return JSON.stringify(response)
             } else {
                 console.log("Erros ao enviar os dados.")
+                location.reload();
             }
         }
     ).catch(error => {
@@ -98,4 +99,34 @@ function criarCategorias(){
         }
     )
 }
+
+//funcao feath passando o id do registro para a funcao php que exclui
+function excluirRegistro(id) {
+    fetch('excluirDespesas.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                idDespesa: id
+            })
+        })
+        .then(response => response.json())
+        location.reload();
+    }
+function excluirCategoria(id_categoria) {
+    fetch('excluirCategoria.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                idCategoria: id_categoria
+            })
+        })
+        .then(response => response.json())
+        location.reload();
+        location.reload();
+    }
+    
 

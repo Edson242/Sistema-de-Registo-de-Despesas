@@ -1,20 +1,15 @@
 <?php
 include "categorias.js";
 $categoria = json_decode(file_get_contents('php://input'), true);
+session_start();
+$id_usuario = $_SESSION['id_us'];
+
+insertCategoria($categoria['nome'], $id_usuario);
 
 
-insertCategoria($categoria['nome']);
-
-
-
-function insertCategoria($nome) {
-
-
-
+function insertCategoria($nome, $id) {
     include "assets/db/db.php";
-    $query = "INSERT INTO categorias(nome) VALUES ('$nome');";
-//     print_r($query);
-// exit;
+    $query = "INSERT INTO categorias(nome, id_usuario) VALUES ('$nome', $id);";
     $process = mysqli_query($connection, $query);
     if($process) {
         exit(json_encode(array("status" => true)));
@@ -22,10 +17,5 @@ function insertCategoria($nome) {
         exit(json_encode(array("status" => false)));
     }
 }
-// function deleteCategoria($nome) {
-//     include "assets/db/db.php";
-//     $query = "DELETE FROM categoria WHERE categoria.nome = $nome";
-//     $process = mysqli_query($connection, $query);
-// }
 
 ?>

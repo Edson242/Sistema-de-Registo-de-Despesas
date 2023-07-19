@@ -76,14 +76,53 @@ div.categoria {
     box-shadow: 0px 2px 5px black;
     background-color: white;
 }
-form.filter {
+div.addCategoria {
+    width: 300px;
+    height: 180px;
+    text-align: center;
+    padding-top: 25px;
+    border: none;
+    box-shadow: 0px 2px 5px black;
+    background-color: white;
+    margin-left: 25px;
+}
+p.categoriaExibida {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 5px;
+}
+p.addCategoria {
+    font-size: 30px;
+}
+div.categoria, .addCategoria{
     /* padding-top: 8px; */
-    font-size: 16px;
-    text-align: justify;
-    margin-left: 40px; 
     word-wrap: break-word;
     overflow-y: scroll;
-    max-height: 90px; 
+    max-height: 180px; 
+}
+#bemVindo {
+    position: fixed;
+    background-color: #034AA6;
+    width: 20%;
+    text-align: center;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.701);
+}
+#logout {
+    position: fixed;
+    width: 70px;
+    left: 310px;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: var(--cor03);
+}
+#logout:hover{
+    background-color: red;
+    color: white;
 }
 /* Scroll
     word-wrap: break-word;
@@ -228,14 +267,32 @@ input.popUp{
     margin-top: 10px;
     margin-bottom: 15px;
 }
-
+#gerarRelatorio {
+    position: fixed;
+    left: 90%;
+    top: 0%;
+    color: white;
+    font-size: 25px;
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 8px;
+}
+#gerarRelatorio:hover {
+    box-shadow: 0px 1px 2px black;
+    cursor: pointer;
+}
+#opcCat {
+    word-wrap: break-word;
+    overflow-y: scroll;
+    max-height: 100px; 
+}
 
 /*Footer*/
 
 .content {
     display: flex;
     justify-content: center;
-    margin-top: 50vh; /*Controle do Footer*/
+    margin-top: 32vh; /*Controle do Footer*/
     background-color: var(--cor04);
 }
 .footer {

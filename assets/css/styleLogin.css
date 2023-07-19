@@ -13,58 +13,59 @@ a.senha:hover {
 
 
 body {
-    background: linear-gradient(to bottom, white 20%, #007bff 80% );
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    width: 600px;
-    width: 500px;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 10vw;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  input {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  button {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: black;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  button {
-    background-color: #0056b3;
-  }
-  button:hover {
-    color: white;
-  }
-  
-  .error-message {
-    color: red;
-    text-align: center;
-  }
+  background: linear-gradient(to bottom, white 20%, #007bff 80% );
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 600px;
+  width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 10vw;
+  border: 2px solid black;
+}
+
+h2 {
+  text-align: center;
+  color: black;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: black;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #0056b3;
+}
+button:hover {
+  color: white;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}
   
