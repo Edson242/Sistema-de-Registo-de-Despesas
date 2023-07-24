@@ -110,8 +110,12 @@
                 <label for="Categoria">Categoria</label><br>
                 <div id="opcCat">
                 <?php
-                foreach ($cat as $key => $value) {
-                    echo "<input class='popUp' type='radio' name='opcoes' value='$key'><label>" . $value . "</label><br>";
+                if($controle == False) {
+                    echo "Sem categorias criadas";
+                } else {
+                    foreach ($cat as $key => $value) {
+                        echo "<input class='popUp' type='radio' name='opcoes' value='$key'><label>" . $value . "</label><br>";
+                }   
                 }
                 ?>
                 </div>
